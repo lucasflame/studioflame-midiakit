@@ -1284,6 +1284,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   transform: translateY(-2px);
 }
 .showreel-btn svg{ width: 18px; height: 18px; }
+.showreel-mute .icon-mute-on{ display: none; }
+.showreel-mute[data-audio="on"] .icon-mute-on{ display: block; }
+.showreel-mute[data-audio="on"] .icon-mute-off{ display: none; }
+.showreel-mute[data-audio="on"]{
+  background: rgba(236, 72, 153, 0.15);
+  border-color: rgba(236, 72, 153, 0.5);
+  color: var(--magenta-200);
+}
 
 .showreel-dots{
   display: flex; gap: 8px;
@@ -3354,6 +3362,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       <button class="showreel-btn" id="showreelNext" aria-label="Próximo vídeo" data-en-aria-label="Next video">
         <svg viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
+      <button class="showreel-btn showreel-mute" id="showreelMute" data-audio="off" aria-label="Ativar som do vídeo" data-en-aria-label="Unmute video">
+        <svg class="icon-mute-off" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 9l-6 6M16 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icon-mute-on" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
 
     <div class="showreel-stats reveal">
@@ -4684,6 +4696,7 @@ if (ref) ref.value = document.referrer || '';
   let current = 0;
   let autoTimer = null;
   let isVisible = false;
+  let audioOn = false;
 
   function slotFor(offset){
     if (offset === 0) return 'center';
@@ -4722,6 +4735,7 @@ if (ref) ref.value = document.referrer || '';
         loadVideoFor(phone);
         // Show video, hide poster after a small delay
         if (isVisible){
+          video.muted = !audioOn;
           video.style.opacity = '1';
           img.style.opacity = '0';
           video.play().catch(()=>{});
@@ -4753,6 +4767,29 @@ if (ref) ref.value = document.referrer || '';
   document.getElementById('showreelNext').addEventListener('click', () => { next(); restartAuto(); });
   document.getElementById('showreelPrev').addEventListener('click', () => { prev(); restartAuto(); });
   dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+  // Mute toggle — gesture-based unmute, applies to all phones (active video plays immediately)
+  const MUTE_LABELS = {
+    pt: { off: 'Ativar som do vídeo', on: 'Silenciar vídeo' },
+    en: { off: 'Unmute video', on: 'Mute video' }
+  };
+  const muteBtn = document.getElementById('showreelMute');
+  if (muteBtn){
+    muteBtn.addEventListener('click', () => {
+      audioOn = !audioOn;
+      muteBtn.setAttribute('data-audio', audioOn ? 'on' : 'off');
+      const lang = (window.__LF_LANG === 'en') ? 'en' : 'pt';
+      muteBtn.setAttribute('aria-label', MUTE_LABELS[lang][audioOn ? 'on' : 'off']);
+      phones.forEach(p => {
+        const v = p.querySelector('video');
+        if (v) v.muted = !audioOn;
+      });
+      if (audioOn){
+        const activeVideo = phones[current] && phones[current].querySelector('video');
+        if (activeVideo) activeVideo.play().catch(()=>{});
+      }
+    });
+  }
 
   // Click on side phones to bring them to center
   phones.forEach((phone, i) => {
