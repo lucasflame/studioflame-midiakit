@@ -4913,12 +4913,11 @@ document.getElementById('applyForm').addEventListener('submit', (e) => {
     });
   }
 
-  // Initial language: localStorage > browser pref > pt
-  let initial = 'pt';
+  // Initial language: localStorage > en (default)
+  let initial = 'en';
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved === 'pt' || saved === 'en') initial = saved;
-    else if ((navigator.language || '').toLowerCase().startsWith('en')) initial = 'en';
   } catch(e) {}
 
   // Wire up toggle
