@@ -4652,12 +4652,12 @@ if (ref) ref.value = document.referrer || '';
 // ============ SHOWREEL COVERFLOW ============
 (function(){
   const VIDEOS = [
-    { src: 'videos/video2.mp4', poster: 'videos/poster2.jpg', brand: 'Manus IA',     views: '2,8M views' },
-    { src: 'videos/video6.mp4', poster: 'videos/poster6.jpg', brand: 'Replit',       views: '2,3M views' },
-    { src: 'videos/video1.mp4', poster: 'videos/poster1.jpg', brand: 'Hugo Boss',    views: '1,4M views' },
-    { src: 'videos/video4.mp4', poster: 'videos/poster4.jpg', brand: 'Adapta',       views: '980k views' },
-    { src: 'videos/video5.mp4', poster: 'videos/poster5.jpg', brand: 'CapCut',       views: '760k views' },
-    { src: 'videos/video3.mp4', poster: 'videos/poster3.jpg', brand: 'Viver de IA',  views: '420k views' }
+    { src: 'videos/video1.mp4', poster: 'videos/poster1.jpg', brand: 'Ribbi',       views: '' },
+    { src: 'videos/video2.mp4', poster: 'videos/poster2.jpg', brand: 'Viver de IA', views: '' },
+    { src: 'videos/video3.mp4', poster: 'videos/poster3.jpg', brand: 'MonitorCorp', views: '' },
+    { src: 'videos/video4.mp4', poster: 'videos/poster4.jpg', brand: 'Catalozap',   views: '' },
+    { src: 'videos/video5.mp4', poster: 'videos/poster5.jpg', brand: 'Manychat',    views: '' },
+    { src: 'videos/video6.mp4', poster: 'videos/poster6.jpg', brand: 'Emergent',    views: '' }
   ];
 
   const track = document.getElementById('showreelTrack');
@@ -4677,7 +4677,7 @@ if (ref) ref.value = document.referrer || '';
         </video>
         <div class="phone-caption">
           <span class="phone-caption-brand">${v.brand}</span>
-          <span class="phone-caption-views">${v.views}</span>
+          ${v.views ? `<span class="phone-caption-views">${v.views}</span>` : ''}
         </div>
       </div>`;
     track.appendChild(phone);
