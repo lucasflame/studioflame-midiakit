@@ -4033,7 +4033,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           </ul>
         </div>
 
-        <form class="form" id="applyForm" method="POST" action="#">
+        <form class="form" id="applyForm" method="POST" action="https://formsubmit.co/parcerias@studioflame.com.br">
+          <input type="hidden" name="_subject" value="Nova aplicação — Studio Flame">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="utm_source" id="utm_source">
           <input type="hidden" name="utm_medium" id="utm_medium">
           <input type="hidden" name="utm_campaign" id="utm_campaign">
@@ -4100,7 +4104,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             <textarea id="goal" name="goal" placeholder="Conta sobre o produto, prazo, KPI e o que você espera dessa parceria." data-en-placeholder="Tell me about the product, timeline, KPI, and what you expect from this partnership." required></textarea>
           </div>
 
-          <button type="submit" class="form-submit" data-en="Submit application →">Enviar aplicação →</button>
+          <button type="submit" class="form-submit" data-en="Send Custom Proposal →">Enviar Proposta Personalizada →</button>
           <div class="form-disclaim" data-en="Response within 48 business hours. Your data stays with me. No spam.">Resposta em até 48h úteis. Seus dados ficam comigo. Sem spam.</div>
         </form>
       </div>
@@ -4829,11 +4833,38 @@ if (ref) ref.value = document.referrer || '';
   });
 })();
 
-// Form submit (placeholder)
-document.getElementById('applyForm').addEventListener('submit', (e) => {
+// Form submit — AJAX to FormSubmit (delivers to parcerias@studioflame.com.br)
+document.getElementById('applyForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  // Conectar a Webflow Forms / Zapier / endpoint custom
-  alert(window.__LF_LANG === 'en' ? 'Application submitted! You\'ll receive a response within 48 business hours.' : 'Aplicação enviada! Você receberá um retorno em até 48h úteis.');
+  const form = e.currentTarget;
+  const lang = window.__LF_LANG === 'en' ? 'en' : 'pt';
+  const submitBtn = form.querySelector('.form-submit');
+  const originalLabel = submitBtn.textContent;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = lang === 'en' ? 'Sending…' : 'Enviando…';
+
+  try {
+    const payload = {};
+    new FormData(form).forEach((v, k) => { payload[k] = v; });
+    const res = await fetch('https://formsubmit.co/ajax/parcerias@studioflame.com.br', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) throw new Error('submission_failed');
+    alert(lang === 'en'
+      ? 'Application submitted! You\'ll receive a response within 48 business hours.'
+      : 'Aplicação enviada! Você receberá um retorno em até 48h úteis.');
+    form.reset();
+  } catch (err) {
+    alert(lang === 'en'
+      ? 'Something went wrong. Please try again or reach out via WhatsApp.'
+      : 'Algo deu errado. Tente novamente ou nos chame no WhatsApp.');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalLabel;
+  }
 });
 
 
