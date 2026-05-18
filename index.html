@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2967,6 +2967,39 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .whatsapp:hover{ transform: scale(1.08); }
 .whatsapp svg{ width: 28px; height: 28px; }
 
+
+/* ============ LANGUAGE TOGGLE ============ */
+.lang-toggle{
+  margin-left: 12px;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 4px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease;
+}
+.lang-toggle:hover{ border-color: rgba(139,92,246,0.4); }
+.lang-toggle span{
+  padding: 5px 10px;
+  border-radius: 100px;
+  color: var(--text-3);
+  transition: color .2s ease, background .2s ease;
+}
+.lang-toggle span.is-active{
+  background: linear-gradient(135deg, var(--purple-500), var(--magenta-500));
+  color: white;
+}
+@media (max-width: 720px){
+  .lang-toggle{ margin-left: 8px; }
+  .lang-toggle span{ padding: 4px 8px; font-size: 10px; }
+}
+
 </style>
 </head>
 <body>
@@ -2979,13 +3012,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       <span>Lucas Flame</span>
     </a>
     <div class="nav-links">
-      <a href="#numbers">Resultados</a>
-      <a href="#showreel">Vídeos</a>
-      <a href="#offer">Oferta</a>
-      <a href="#plans">Planos</a>
-      <a href="#faq">FAQ</a>
+      <a href="#numbers" data-en="Results">Resultados</a>
+      <a href="#showreel" data-en="Videos">Vídeos</a>
+      <a href="#offer" data-en="Offer">Oferta</a>
+      <a href="#plans" data-en="Plans">Planos</a>
+      <a href="#faq" data-en="FAQ">FAQ</a>
     </div>
-    <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="nav-cta">Aplicar para parceria</a>
+    <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="nav-cta" data-en="Apply for partnership">Aplicar para parceria</a>
+    <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language"><span data-lang-pt class="is-active">PT</span><span data-lang-en>EN</span></button>
   </div>
 </nav>
 
@@ -2998,26 +3032,26 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       <div class="hero-copy reveal">
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-          Vagas limitadas para 2026
+          <span data-en="Limited slots for 2026">Vagas limitadas para 2026</span>
         </div>
-        <h1>Sua marca em <em>milhões de telas</em>, com previsibilidade real.</h1>
-        <p class="hero-sub">Parceria de creator com <strong>50.000 visualizações mínimas garantidas</strong> por vídeo no Instagram, repost em todas as redes e 90 dias de Ad Code. Sem achismo. Sem promessa vaga.</p>
+        <h1 data-en-html="Your brand on &lt;em&gt;millions of screens&lt;/em&gt;, with real predictability.">Sua marca em <em>milhões de telas</em>, com previsibilidade real.</h1>
+        <p class="hero-sub" data-en-html="Creator partnership with &lt;strong&gt;50,000 minimum guaranteed views&lt;/strong&gt; per Instagram video, repost across every network, and 90 days of Ad Code. No guesswork. No vague promises.">Parceria de creator com <strong>50.000 visualizações mínimas garantidas</strong> por vídeo no Instagram, repost em todas as redes e 90 dias de Ad Code. Sem achismo. Sem promessa vaga.</p>
         <div class="hero-ctas">
-          <a href="#ultra" class="btn btn-primary">Aplicar para parceria <span class="btn-arrow">→</span></a>
-          <a href="#ultra" class="btn btn-ghost">Ver o que está incluso</a>
+          <a href="#ultra" class="btn btn-primary" data-en-html="Apply for partnership &lt;span class=&quot;btn-arrow&quot;&gt;→&lt;/span&gt;">Aplicar para parceria <span class="btn-arrow">→</span></a>
+          <a href="#ultra" class="btn btn-ghost" data-en="See what's included">Ver o que está incluso</a>
         </div>
         <div class="hero-stats">
           <div class="stat">
             <div class="stat-value">813k+</div>
-            <div class="stat-label">seguidores totais</div>
+            <div class="stat-label" data-en="total followers">seguidores totais</div>
           </div>
           <div class="stat">
             <div class="stat-value">5,2M</div>
-            <div class="stat-label">contas alcançadas / por mês</div>
+            <div class="stat-label" data-en="accounts reached / per month">contas alcançadas / por mês</div>
           </div>
           <div class="stat">
             <div class="stat-value">+150</div>
-            <div class="stat-label">marcas alavancadas</div>
+            <div class="stat-label" data-en="brands launched">marcas alavancadas</div>
           </div>
         </div>
       </div>
@@ -3031,7 +3065,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 <!-- ============ MARQUEE ============ -->
 <section class="marquee-section">
   <div class="container">
-    <div class="marquee-label">Marcas que já confiaram no meu trabalho</div>
+    <div class="marquee-label" data-en="Brands that have trusted my work">Marcas que já confiaram no meu trabalho</div>
   </div>
   <div class="marquee">
     <div class="marquee-track">
@@ -3066,9 +3100,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 <section class="numbers" id="numbers">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Os números — atualizados</div>
-      <h2 class="section-title">Distribuição em <em>seis canais</em>, audiência ativa todos os dias.</h2>
-      <p class="section-sub">Não é um único Instagram com vaidade de seguidores. É uma operação multi-plataforma que entrega o mesmo criativo em pontos de contato diferentes — multiplicando o alcance pago pela marca.</p>
+      <div class="section-label" data-en="The numbers — updated">Os números — atualizados</div>
+      <h2 class="section-title" data-en-html="Distribution across &lt;em&gt;six channels&lt;/em&gt;, audience active every day.">Distribuição em <em>seis canais</em>, audiência ativa todos os dias.</h2>
+      <p class="section-sub" data-en="It's not a single Instagram with vanity follower counts. It's a multi-platform operation delivering the same creative across different touchpoints — multiplying paid reach for the brand.">Não é um único Instagram com vaidade de seguidores. É uma operação multi-plataforma que entrega o mesmo criativo em pontos de contato diferentes — multiplicando o alcance pago pela marca.</p>
     </div>
 
     <div class="galaxy-section reveal">
@@ -3154,8 +3188,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
                 <div class="galaxy-core-icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
                 <div class="galaxy-core-platform">Instagram</div>
                 <div class="galaxy-core-value">507k</div>
-                <div class="galaxy-core-label">o coração da operação</div>
-                <div class="galaxy-core-tag">Onde o vídeo nasce</div>
+                <div class="galaxy-core-label" data-en="the heart of the operation">o coração da operação</div>
+                <div class="galaxy-core-tag" data-en="Where the video is born">Onde o vídeo nasce</div>
               </div>
             </div>
           </div>
@@ -3168,7 +3202,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             <div class="galaxy-node-info">
               <div class="galaxy-node-platform">TikTok</div>
               <div class="galaxy-node-value">137k</div>
-              <div class="galaxy-node-desc">Repost orgânico</div>
+              <div class="galaxy-node-desc" data-en="Organic repost">Repost orgânico</div>
             </div>
           </div>
 
@@ -3179,7 +3213,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             <div class="galaxy-node-info">
               <div class="galaxy-node-platform">Threads</div>
               <div class="galaxy-node-value">106k</div>
-              <div class="galaxy-node-desc">Engajamento alto</div>
+              <div class="galaxy-node-desc" data-en="High engagement">Engajamento alto</div>
             </div>
           </div>
 
@@ -3190,7 +3224,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             <div class="galaxy-node-info">
               <div class="galaxy-node-platform">Facebook</div>
               <div class="galaxy-node-value">36k</div>
-              <div class="galaxy-node-desc">Distribuição extra</div>
+              <div class="galaxy-node-desc" data-en="Extra distribution">Distribuição extra</div>
             </div>
           </div>
 
@@ -3199,9 +3233,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
               <div class="galaxy-node-icon"><svg viewBox="0 0 24 24"><path d="M22.05 1.577c-.393-.31-.95-.394-1.408-.214L1.65 8.84c-.464.183-.789.621-.83 1.118-.041.498.21.971.642 1.214l5.842 3.241v6.231c0 .457.275.871.696 1.05a1.144 1.144 0 0 0 1.232-.234l3.087-2.89 4.972 3.658c.205.151.45.232.7.232.114 0 .228-.017.339-.052.337-.105.598-.346.726-.673l5.677-15.295c.176-.466.045-.99-.388-1.279zM9.4 14.97l-1.07.974-.95.866-2.61-1.448L18.8 6.13 10.046 14.36c-.213.198-.527.327-.646.61z"/></svg></div>
             </div>
             <div class="galaxy-node-info">
-              <div class="galaxy-node-platform">Canais internos</div>
+              <div class="galaxy-node-platform" data-en="Internal channels">Canais internos</div>
               <div class="galaxy-node-value">4,2k</div>
-              <div class="galaxy-node-desc">Telegram + WhatsApp</div>
+              <div class="galaxy-node-desc" data-en="Telegram + WhatsApp">Telegram + WhatsApp</div>
             </div>
           </div>
 
@@ -3212,7 +3246,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             <div class="galaxy-node-info">
               <div class="galaxy-node-platform">Kwai</div>
               <div class="galaxy-node-value">25k</div>
-              <div class="galaxy-node-desc">Audiência regional</div>
+              <div class="galaxy-node-desc" data-en="Regional audience">Audiência regional</div>
             </div>
           </div>
 
@@ -3223,7 +3257,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             <div class="galaxy-node-info">
               <div class="galaxy-node-platform">YT Shorts</div>
               <div class="galaxy-node-value">2k</div>
-              <div class="galaxy-node-desc">Em crescimento</div>
+              <div class="galaxy-node-desc" data-en="Growing">Em crescimento</div>
             </div>
           </div>
         </div>
@@ -3234,7 +3268,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <div class="galaxy-mobile-card is-core">
           <div class="gm-platform"><span class="gm-icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"/></svg></span> Instagram</div>
           <div class="gm-value">507k</div>
-          <div class="gm-desc">Canal principal · onde o vídeo nasce</div>
+          <div class="gm-desc" data-en="Primary channel · where the video is born">Canal principal · onde o vídeo nasce</div>
         </div>
         <div class="galaxy-mobile-card">
           <div class="gm-platform"><span class="gm-icon"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg></span> TikTok</div>
@@ -3265,25 +3299,25 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       <!-- Total badge -->
       <div class="galaxy-total">
         <span class="galaxy-total-dot"></span>
-        <span class="galaxy-total-text"><strong>+813k seguidores</strong> distribuídos em 6 plataformas</span>
+        <span class="galaxy-total-text" data-en-html="&lt;strong&gt;+813k followers&lt;/strong&gt; across 6 platforms"><strong>+813k seguidores</strong> distribuídos em 6 plataformas</span>
       </div>
 
       <!-- Performance KPIs -->
       <div class="galaxy-kpis">
         <div class="galaxy-kpi">
-          <div class="galaxy-kpi-label-top">Performance · 90 dias</div>
+          <div class="galaxy-kpi-label-top" data-en="Performance · 90 days">Performance · 90 dias</div>
           <div class="galaxy-kpi-value">5,2M</div>
-          <div class="galaxy-kpi-label">contas alcançadas</div>
+          <div class="galaxy-kpi-label" data-en="accounts reached">contas alcançadas</div>
         </div>
         <div class="galaxy-kpi">
-          <div class="galaxy-kpi-label-top">Crescimento · 90 dias</div>
+          <div class="galaxy-kpi-label-top" data-en="Growth · 90 days">Crescimento · 90 dias</div>
           <div class="galaxy-kpi-value">+498k</div>
-          <div class="galaxy-kpi-label">novos seguidores</div>
+          <div class="galaxy-kpi-label" data-en="new followers">novos seguidores</div>
         </div>
         <div class="galaxy-kpi">
-          <div class="galaxy-kpi-label-top">Top Reels · médio</div>
+          <div class="galaxy-kpi-label-top" data-en="Top Reels · average">Top Reels · médio</div>
           <div class="galaxy-kpi-value">+45k</div>
-          <div class="galaxy-kpi-label">views por publi de topo</div>
+          <div class="galaxy-kpi-label" data-en="views per top branded post">views por publi de topo</div>
         </div>
       </div>
 
@@ -3296,13 +3330,13 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   <div class="container">
     <div class="showreel-head reveal">
       <div>
-        <div class="section-label">Vídeo curto vende</div>
-        <h2 class="section-title">É <em>assim</em> que sua marca vai parecer.</h2>
+        <div class="section-label" data-en="Short video sells">Vídeo curto vende</div>
+        <h2 class="section-title" data-en-html="This is &lt;em&gt;how&lt;/em&gt; your brand will look.">É <em>assim</em> que sua marca vai parecer.</h2>
       </div>
       <div class="showreel-aside">
-        <p>Roteiro testado, gancho calibrado, produção pensada para reter — e converter. Cada segundo é decisão de design.</p>
-        <p>Os vídeos abaixo são publis reais. Mesma régua que entrego para sua marca.</p>
-        <div class="meta">+ 100 vídeos publicitários · + 3M views em publis</div>
+        <p data-en="Tested script, calibrated hook, production designed to retain — and convert. Every second is a design decision.">Roteiro testado, gancho calibrado, produção pensada para reter — e converter. Cada segundo é decisão de design.</p>
+        <p data-en="The videos below are real branded posts. Same standard I deliver for your brand.">Os vídeos abaixo são publis reais. Mesma régua que entrego para sua marca.</p>
+        <div class="meta" data-en="+ 100 branded videos · + 3M branded views">+ 100 vídeos publicitários · + 3M views em publis</div>
       </div>
     </div>
 
@@ -3313,27 +3347,27 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     </div>
 
     <div class="showreel-controls reveal">
-      <button class="showreel-btn" id="showreelPrev" aria-label="Vídeo anterior">
+      <button class="showreel-btn" id="showreelPrev" aria-label="Vídeo anterior" data-en-aria-label="Previous video">
         <svg viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="showreel-dots" id="showreelDots"></div>
-      <button class="showreel-btn" id="showreelNext" aria-label="Próximo vídeo">
+      <button class="showreel-btn" id="showreelNext" aria-label="Próximo vídeo" data-en-aria-label="Next video">
         <svg viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
 
     <div class="showreel-stats reveal">
       <div>
-        <div class="showreel-stat-value">+ 3 milhões</div>
-        <div class="showreel-stat-label">de views somadas em publis</div>
+        <div class="showreel-stat-value" data-en="+ 3 million">+ 3 milhões</div>
+        <div class="showreel-stat-label" data-en="total branded views">de views somadas em publis</div>
       </div>
       <div>
-        <div class="showreel-stat-value">+ 100 vídeos</div>
-        <div class="showreel-stat-label">publicitários produzidos</div>
+        <div class="showreel-stat-value" data-en="+ 100 videos">+ 100 vídeos</div>
+        <div class="showreel-stat-label" data-en="branded videos produced">publicitários produzidos</div>
       </div>
       <div>
         <div class="showreel-stat-value">4,9M</div>
-        <div class="showreel-stat-label">views no melhor publi (Adobe)</div>
+        <div class="showreel-stat-label" data-en="views on top branded video (Adobe)">views no melhor publi (Adobe)</div>
       </div>
     </div>
   </div>
@@ -3343,9 +3377,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 <section class="demo" id="audience">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Audiência</div>
-      <h2 class="section-title">Quem está <em>do outro lado</em> da tela.</h2>
-      <p class="section-sub">Audiência majoritariamente adulta, com poder de compra, concentrada nos principais centros urbanos do Brasil. Ideal para marcas de tecnologia, finanças, educação, ferramentas digitais e produtos premium.</p>
+      <div class="section-label" data-en="Audience">Audiência</div>
+      <h2 class="section-title" data-en-html="Who&#x27;s &lt;em&gt;on the other side&lt;/em&gt; of the screen.">Quem está <em>do outro lado</em> da tela.</h2>
+      <p class="section-sub" data-en="Predominantly adult audience with buying power, concentrated in Brazil's major urban centers. Ideal for tech, finance, education, digital tools, and premium product brands.">Audiência majoritariamente adulta, com poder de compra, concentrada nos principais centros urbanos do Brasil. Ideal para marcas de tecnologia, finanças, educação, ferramentas digitais e produtos premium.</p>
     </div>
 
     <div class="demo-globe-wrap reveal" id="demoGlobeWrap">
@@ -3354,29 +3388,29 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       </div>
 
       <div class="demo-globe-info">
-        <div class="section-label">Alcance global</div>
-        <h3>Audiência <em>presente em 4 países</em>, concentrada onde a marca mais quer estar.</h3>
-        <p>Cada ponto luminoso é uma cidade onde o conteúdo gera engajamento real e sustentado. Brasil concentra 88% — com peso forte nos quatro maiores centros urbanos do país.</p>
+        <div class="section-label" data-en="Global reach">Alcance global</div>
+        <h3 data-en-html="Audience &lt;em&gt;active in 4 countries&lt;/em&gt;, concentrated where brands most want to be.">Audiência <em>presente em 4 países</em>, concentrada onde a marca mais quer estar.</h3>
+        <p data-en="Each glowing dot is a city where the content drives real, sustained engagement. Brazil accounts for 88% — heavily concentrated in the country's four largest urban centers.">Cada ponto luminoso é uma cidade onde o conteúdo gera engajamento real e sustentado. Brasil concentra 88% — com peso forte nos quatro maiores centros urbanos do país.</p>
 
         <div class="cities-legend">
           <div class="city-item" data-city="sao-paulo">
             <span class="city-marker"></span>
-            <span class="city-name"><strong>São Paulo</strong>Maior concentração</span>
+            <span class="city-name" data-en-html="&lt;strong&gt;São Paulo&lt;/strong&gt;Largest concentration"><strong>São Paulo</strong>Maior concentração</span>
             <span class="city-pct">6,4%</span>
           </div>
           <div class="city-item" data-city="rio">
             <span class="city-marker"></span>
-            <span class="city-name"><strong>Rio de Janeiro</strong>Audiência premium</span>
+            <span class="city-name" data-en-html="&lt;strong&gt;Rio de Janeiro&lt;/strong&gt;Premium audience"><strong>Rio de Janeiro</strong>Audiência premium</span>
             <span class="city-pct">3,1%</span>
           </div>
           <div class="city-item" data-city="fortaleza">
             <span class="city-marker"></span>
-            <span class="city-name"><strong>Fortaleza</strong>Crescimento acelerado</span>
+            <span class="city-name" data-en-html="&lt;strong&gt;Fortaleza&lt;/strong&gt;Accelerated growth"><strong>Fortaleza</strong>Crescimento acelerado</span>
             <span class="city-pct">1,5%</span>
           </div>
           <div class="city-item" data-city="bh">
             <span class="city-marker"></span>
-            <span class="city-name"><strong>Belo Horizonte</strong>Engajamento alto</span>
+            <span class="city-name" data-en-html="&lt;strong&gt;Belo Horizonte&lt;/strong&gt;High engagement"><strong>Belo Horizonte</strong>Engajamento alto</span>
             <span class="city-pct">1,3%</span>
           </div>
         </div>
@@ -3385,7 +3419,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
     <div class="demo-grid reveal">
       <div class="demo-card">
-        <div class="demo-card-title">Idade — últimos 30 dias</div>
+        <div class="demo-card-title" data-en="Age — last 30 days">Idade — últimos 30 dias</div>
         <div class="demo-bar">
           <div class="demo-bar-label">35–44</div>
           <div class="demo-bar-track"><div class="demo-bar-fill" style="width:36.5%"></div></div>
@@ -3419,17 +3453,17 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       </div>
 
       <div class="demo-card">
-        <div class="demo-card-title">Gênero & Localização</div>
+        <div class="demo-card-title" data-en="Gender & Location">Gênero & Localização</div>
 
         <div class="gender-split">
-          <div class="gender-bar gender-m">Homens · 65%</div>
-          <div class="gender-bar gender-f">Mulheres · 35%</div>
+          <div class="gender-bar gender-m" data-en="Men · 65%">Homens · 65%</div>
+          <div class="gender-bar gender-f" data-en="Women · 35%">Mulheres · 35%</div>
         </div>
 
-        <div style="margin-top: 28px; margin-bottom: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3);">Países</div>
+        <div style="margin-top: 28px; margin-bottom: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3);" data-en="Countries">Países</div>
         <div class="geo-list">
           <div class="demo-bar">
-            <div class="demo-bar-label">Brasil</div>
+            <div class="demo-bar-label" data-en="Brazil">Brasil</div>
             <div class="demo-bar-track"><div class="demo-bar-fill" style="width:88%"></div></div>
             <div class="demo-bar-value">88%</div>
           </div>
@@ -3439,18 +3473,18 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             <div class="demo-bar-value">2,1%</div>
           </div>
           <div class="demo-bar">
-            <div class="demo-bar-label">Japão</div>
+            <div class="demo-bar-label" data-en="Japan">Japão</div>
             <div class="demo-bar-track"><div class="demo-bar-fill" style="width:1.5%"></div></div>
             <div class="demo-bar-value">1,5%</div>
           </div>
           <div class="demo-bar">
-            <div class="demo-bar-label">Índia</div>
+            <div class="demo-bar-label" data-en="India">Índia</div>
             <div class="demo-bar-track"><div class="demo-bar-fill" style="width:1.2%"></div></div>
             <div class="demo-bar-value">1,2%</div>
           </div>
         </div>
 
-        <div style="margin-top: 24px; margin-bottom: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3);">Cidades · Brasil</div>
+        <div style="margin-top: 24px; margin-bottom: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3);" data-en="Cities · Brazil">Cidades · Brasil</div>
         <div class="geo-list">
           <div class="demo-bar">
             <div class="demo-bar-label">São Paulo</div>
@@ -3482,82 +3516,82 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 <section class="offer" id="offer">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">A oferta</div>
-      <h2 class="section-title">Tudo o que <em>uma marca séria</em> precisa em um pacote só.</h2>
-      <p class="section-sub">Roteiro estratégico, produção, distribuição multi-plataforma, mídia paga e direitos de uso. Pensado para marcas que querem performance — não exposição cosmética.</p>
+      <div class="section-label" data-en="The offer">A oferta</div>
+      <h2 class="section-title" data-en-html="Everything a &lt;em&gt;serious brand&lt;/em&gt; needs in a single package.">Tudo o que <em>uma marca séria</em> precisa em um pacote só.</h2>
+      <p class="section-sub" data-en="Strategic script, production, multi-platform distribution, paid media, and usage rights. Built for brands that want performance — not cosmetic exposure.">Roteiro estratégico, produção, distribuição multi-plataforma, mídia paga e direitos de uso. Pensado para marcas que querem performance — não exposição cosmética.</p>
     </div>
 
     <div class="offer-hero reveal">
       <div class="offer-grid">
         <div>
-          <div class="section-label" style="color: var(--purple-200);">Incluso por padrão</div>
-          <h3 style="font-family: var(--display); font-size: clamp(28px, 3vw, 38px); margin: 8px 0 0; letter-spacing: -0.01em;">1 vídeo no Instagram + amplificação completa</h3>
+          <div class="section-label" style="color: var(--purple-200);" data-en="Included by default">Incluso por padrão</div>
+          <h3 style="font-family: var(--display); font-size: clamp(28px, 3vw, 38px); margin: 8px 0 0; letter-spacing: -0.01em;" data-en="1 Instagram video + full amplification">1 vídeo no Instagram + amplificação completa</h3>
 
           <div class="offer-feat-list">
             <div class="offer-feat">
               <div class="offer-feat-check"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="offer-feat-text">
-                <strong>Repost em todas as redes</strong>
-                <span>Instagram, TikTok, Threads, Facebook, Kwai e YouTube Shorts — mesmo criativo, seis pontos de contato.</span>
+                <strong data-en="Repost across every network">Repost em todas as redes</strong>
+                <span data-en="Instagram, TikTok, Threads, Facebook, Kwai, and YouTube Shorts — same creative, six touchpoints.">Instagram, TikTok, Threads, Facebook, Kwai e YouTube Shorts — mesmo criativo, seis pontos de contato.</span>
               </div>
             </div>
             <div class="offer-feat">
               <div class="offer-feat-check"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="offer-feat-text">
-                <strong>Automação no Direct com link rastreável</strong>
-                <span>Cada comentário vira um lead qualificado direto na DM. Você sabe quem clicou, de onde veio e quando.</span>
+                <strong data-en="Direct DM automation with trackable link">Automação no Direct com link rastreável</strong>
+                <span data-en="Every comment becomes a qualified lead straight in the DM. You know who clicked, where they came from, and when.">Cada comentário vira um lead qualificado direto na DM. Você sabe quem clicou, de onde veio e quando.</span>
               </div>
             </div>
             <div class="offer-feat">
               <div class="offer-feat-check"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="offer-feat-text">
-                <strong>30 dias de link na bio</strong>
-                <span>Tráfego direto para sua oferta, sem competição com outras marcas no perfil.</span>
+                <strong data-en="30 days of bio link">30 dias de link na bio</strong>
+                <span data-en="Direct traffic to your offer, no competing brands in the profile.">Tráfego direto para sua oferta, sem competição com outras marcas no perfil.</span>
               </div>
             </div>
             <div class="offer-feat">
               <div class="offer-feat-check"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="offer-feat-text">
-                <strong>90 dias de Ad Code (whitelisting)</strong>
-                <span>Você roda o vídeo como anúncio na sua conta de Meta Ads, com a credibilidade do meu perfil. Por 3 meses.</span>
+                <strong data-en="90 days of Ad Code (whitelisting)">90 dias de Ad Code (whitelisting)</strong>
+                <span data-en="Run the video as an ad from your Meta Ads account, carrying my profile's credibility. For 3 months.">Você roda o vídeo como anúncio na sua conta de Meta Ads, com a credibilidade do meu perfil. Por 3 meses.</span>
               </div>
             </div>
             <div class="offer-feat">
               <div class="offer-feat-check"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="offer-feat-text">
-                <strong>Garantia de 50.000 views no Instagram</strong>
-                <span>Se o vídeo não bater, eu impulsiono via Meta Ads com o mesmo criativo até atingir. Janela de até 14 dias.</span>
+                <strong data-en="50,000-view guarantee on Instagram">Garantia de 50.000 views no Instagram</strong>
+                <span data-en="If the video doesn't hit organically, I boost via Meta Ads with the same creative until it does. 14-day window.">Se o vídeo não bater, eu impulsiono via Meta Ads com o mesmo criativo até atingir. Janela de até 14 dias.</span>
               </div>
             </div>
             <div class="offer-feat">
               <div class="offer-feat-check"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="offer-feat-text">
-                <strong>Prazo claro: 10 dias</strong>
-                <span>5 dias para roteiro preliminar com aprovação. 5 dias para produção e finalização do vídeo.</span>
+                <strong data-en="Clear timeline: 10 days">Prazo claro: 10 dias</strong>
+                <span data-en="5 days for the preliminary script with approval. 5 days for production and final delivery.">5 dias para roteiro preliminar com aprovação. 5 dias para produção e finalização do vídeo.</span>
               </div>
             </div>
           </div>
         </div>
 
         <div class="price-card">
-          <div class="price-tag">Pacote base</div>
-          <div class="price-from">a partir de</div>
+          <div class="price-tag" data-en="Base package">Pacote base</div>
+          <div class="price-from" data-en="starting from">a partir de</div>
           <div class="price-value"><sup>US$</sup> 880</div>
-          <div class="price-unit">por vídeo no Instagram</div>
+          <div class="price-unit" data-en="per Instagram video">por vídeo no Instagram</div>
 
           <div class="price-payment">
             <span class="payment-tag">PayPal</span>
-            <span class="payment-tag">Transferência bancária</span>
+            <span class="payment-tag" data-en="Bank transfer">Transferência bancária</span>
           </div>
 
-          <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; justify-content: center;">Aplicar para parceria <span class="btn-arrow">→</span></a>
-          <div style="text-align: center; margin-top: 12px; font-size: 12px; color: var(--text-3);">Resposta em até 48h úteis</div>
+          <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; justify-content: center;" data-en-html="Apply for partnership &lt;span class=&quot;btn-arrow&quot;&gt;→&lt;/span&gt;">Aplicar para parceria <span class="btn-arrow">→</span></a>
+          <div style="text-align: center; margin-top: 12px; font-size: 12px; color: var(--text-3);" data-en="Response within 48 business hours">Resposta em até 48h úteis</div>
         </div>
       </div>
 
       <div class="guarantee">
-        <div class="guarantee-title">⚡ Como a garantia funciona — total transparência</div>
-        <div class="guarantee-text">
+        <div class="guarantee-title" data-en="⚡ How the guarantee works — full transparency">⚡ Como a garantia funciona — total transparência</div>
+        <div class="guarantee-text" data-en-html="The 50,000-view guarantee is fulfilled via &lt;strong&gt;Meta Ads boosting&lt;/strong&gt;, using the exact same creative as the organic post. Delivery window is &lt;strong&gt;up to 14 days&lt;/strong&gt; from publication. By default, the media budget is covered by the brand (aligned in advance, case by case) — ensuring targeted reach to the right audience and clean attribution. No fine print.">
           A garantia de 50.000 views é cumprida via <strong>impulsionamento no Meta Ads</strong>, usando exatamente o mesmo criativo do post orgânico. A janela de entrega é de <strong>até 14 dias</strong> a partir da publicação. Por padrão, o budget de mídia é arcado pela marca (a alinhar previamente, caso a caso) — o que garante segmentação para o público de interesse e atribuição limpa. Sem letra miúda.
         </div>
       </div>
@@ -3569,8 +3603,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 <section class="how">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Como funciona</div>
-      <h2 class="section-title">De brief a milhões de views em <em>10 dias</em>.</h2>
+      <div class="section-label" data-en="How it works">Como funciona</div>
+      <h2 class="section-title" data-en-html="From brief to millions of views in &lt;em&gt;10 days&lt;/em&gt;.">De brief a milhões de views em <em>10 dias</em>.</h2>
     </div>
 
     <div class="timeline reveal">
@@ -3587,12 +3621,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <div class="station">
           <div class="station-badge">01</div>
           <div class="station-content">
-            <div class="station-tag">Aplicação</div>
-            <div class="station-title">Você aplica</div>
-            <div class="station-desc">Preenche o formulário com a marca, produto e objetivo. Eu respondo em até 48h úteis com aprovação ou redirecionamento.</div>
+            <div class="station-tag" data-en="Application">Aplicação</div>
+            <div class="station-title" data-en="You apply">Você aplica</div>
+            <div class="station-desc" data-en="Fill out the form with brand, product, and goal. I reply within 48 business hours with approval or guidance.">Preenche o formulário com a marca, produto e objetivo. Eu respondo em até 48h úteis com aprovação ou redirecionamento.</div>
             <div class="station-day">
               <span class="station-day-dot"></span>
-              Dia 1
+              <span data-en="Day 1">Dia 1</span>
             </div>
           </div>
         </div>
@@ -3601,12 +3635,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <div class="station">
           <div class="station-badge">02</div>
           <div class="station-content">
-            <div class="station-tag">Estratégia</div>
-            <div class="station-title">Brief + roteiro</div>
-            <div class="station-desc">Call de alinhamento, definição de mensagem, gancho e CTA. Roteiro preliminar enviado para aprovação.</div>
+            <div class="station-tag" data-en="Strategy">Estratégia</div>
+            <div class="station-title" data-en="Brief + script">Brief + roteiro</div>
+            <div class="station-desc" data-en="Alignment call, message definition, hook, and CTA. Preliminary script sent for approval.">Call de alinhamento, definição de mensagem, gancho e CTA. Roteiro preliminar enviado para aprovação.</div>
             <div class="station-day">
               <span class="station-day-dot"></span>
-              Dia 5
+              <span data-en="Day 5">Dia 5</span>
             </div>
           </div>
         </div>
@@ -3615,12 +3649,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <div class="station">
           <div class="station-badge">03</div>
           <div class="station-content">
-            <div class="station-tag">Produção</div>
-            <div class="station-title">Gravação e edição</div>
-            <div class="station-desc">Produção do vídeo com qualidade Studio Flame, seguindo o que mais converte na audiência.</div>
+            <div class="station-tag" data-en="Production">Produção</div>
+            <div class="station-title" data-en="Filming and editing">Gravação e edição</div>
+            <div class="station-desc" data-en="Video production at Studio Flame quality, following what converts best with the audience.">Produção do vídeo com qualidade Studio Flame, seguindo o que mais converte na audiência.</div>
             <div class="station-day">
               <span class="station-day-dot"></span>
-              Dia 10
+              <span data-en="Day 10">Dia 10</span>
             </div>
           </div>
         </div>
@@ -3629,12 +3663,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <div class="station station-hero">
           <div class="station-badge">04</div>
           <div class="station-content">
-            <div class="station-tag">★ Resultado</div>
-            <div class="station-title">Publicação + ampliação</div>
-            <div class="station-desc">Publicação no Instagram em formato collab, repost nas demais redes, automação no Direct, link na bio e Ad Code ativado para escala em mídia paga.</div>
+            <div class="station-tag" data-en="★ Result">★ Resultado</div>
+            <div class="station-title" data-en="Publication + amplification">Publicação + ampliação</div>
+            <div class="station-desc" data-en="Instagram collab post, repost across other networks, DM automation, bio link, and Ad Code activated for paid media scale.">Publicação no Instagram em formato collab, repost nas demais redes, automação no Direct, link na bio e Ad Code ativado para escala em mídia paga.</div>
             <div class="station-day">
               <span class="station-day-dot"></span>
-              Dia 14+ · monitoramento ativo
+              <span data-en="Day 14+ · active monitoring">Dia 14+ · monitoramento ativo</span>
             </div>
           </div>
         </div>
@@ -3643,10 +3677,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- Day markers floor -->
       <div class="timeline-floor" aria-hidden="true">
-        <div class="timeline-day">início <strong>Dia 1</strong></div>
-        <div class="timeline-day">aprovação <strong>Dia 5</strong></div>
-        <div class="timeline-day">vídeo pronto <strong>Dia 10</strong></div>
-        <div class="timeline-day">no ar + escala <strong>Dia 14+</strong></div>
+        <div class="timeline-day" data-en-html="start &lt;strong&gt;Day 1&lt;/strong&gt;">início <strong>Dia 1</strong></div>
+        <div class="timeline-day" data-en-html="approval &lt;strong&gt;Day 5&lt;/strong&gt;">aprovação <strong>Dia 5</strong></div>
+        <div class="timeline-day" data-en-html="video ready &lt;strong&gt;Day 10&lt;/strong&gt;">vídeo pronto <strong>Dia 10</strong></div>
+        <div class="timeline-day" data-en-html="live + scale &lt;strong&gt;Day 14+&lt;/strong&gt;">no ar + escala <strong>Dia 14+</strong></div>
       </div>
     </div>
   </div>
@@ -3656,9 +3690,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 <section class="plans" id="plans">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Planos</div>
-      <h2 class="section-title">Escolha a <em>intensidade</em> da sua presença.</h2>
-      <p class="section-sub">Três níveis pensados para diferentes momentos da marca: do primeiro teste à campanha completa com mídia paga e garantia de performance.</p>
+      <div class="section-label" data-en="Plans">Planos</div>
+      <h2 class="section-title" data-en-html="Choose the &lt;em&gt;intensity&lt;/em&gt; of your presence.">Escolha a <em>intensidade</em> da sua presença.</h2>
+      <p class="section-sub" data-en="Three tiers built for different brand moments: from first test to full campaign with paid media and a performance guarantee.">Três níveis pensados para diferentes momentos da marca: do primeiro teste à campanha completa com mídia paga e garantia de performance.</p>
     </div>
 
     <div class="plans-grid reveal">
@@ -3666,100 +3700,100 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       <!-- STARTER -->
       <div class="plan">
         <div class="plan-name"><span class="plan-name-icon">⚡</span> Starter</div>
-        <div class="plan-tagline">Vídeo individual em collab no Instagram</div>
+        <div class="plan-tagline" data-en="Single Instagram collab video">Vídeo individual em collab no Instagram</div>
 
         <div class="plan-price-block">
           <div class="plan-price"><span class="plan-price-sup">US$</span>880</div>
-          <div class="plan-price-suffix">pagamento único · 1 vídeo</div>
+          <div class="plan-price-suffix" data-en="one-time payment · 1 video">pagamento único · 1 vídeo</div>
         </div>
 
-        <div class="plan-section-title">O que está incluso</div>
+        <div class="plan-section-title" data-en="What's included">O que está incluso</div>
         <ul class="plan-features">
-          <li>1 Reel no Instagram do Lucas Flame</li>
-          <li>Publicação em formato collab com a marca</li>
-          <li>Marcação do @ da empresa na legenda</li>
-          <li>Roteiro preliminar para aprovação</li>
-          <li>Produção e entrega do vídeo final</li>
-          <li>CTA principal dentro do conteúdo</li>
-          <li>Prazo total: até 10 dias</li>
+          <li data-en="1 Reel on Lucas Flame's Instagram">1 Reel no Instagram do Lucas Flame</li>
+          <li data-en="Posted in collab format with the brand">Publicação em formato collab com a marca</li>
+          <li data-en="Brand @ tagged in the caption">Marcação do @ da empresa na legenda</li>
+          <li data-en="Preliminary script for approval">Roteiro preliminar para aprovação</li>
+          <li data-en="Production and final video delivery">Produção e entrega do vídeo final</li>
+          <li data-en="Primary CTA inside the content">CTA principal dentro do conteúdo</li>
+          <li data-en="Total timeline: up to 10 days">Prazo total: até 10 dias</li>
         </ul>
 
         <div class="plan-best">
-          <strong>Melhor para</strong>
-          Marcas que querem validar uma mensagem ou fazer entrada rápida na audiência.
+          <strong data-en="Best for">Melhor para</strong>
+          <span data-en="Brands that want to validate a message or make a quick entry into the audience.">Marcas que querem validar uma mensagem ou fazer entrada rápida na audiência.</span>
         </div>
 
-        <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta">Quero começar com o Starter</a>
+        <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" data-en="Start with the Starter plan">Quero começar com o Starter</a>
       </div>
 
       <!-- PRO -->
       <div class="plan plan-featured">
         <div class="plan-name"><span class="plan-name-icon">🚀</span> Pro</div>
-        <div class="plan-tagline">Vídeo + repost em todas as redes + automação com link</div>
+        <div class="plan-tagline" data-en="Video + repost across every network + automation with link">Vídeo + repost em todas as redes + automação com link</div>
 
         <div class="plan-price-block">
           <div class="plan-price"><span class="plan-price-sup">US$</span>1.480</div>
-          <div class="plan-price-suffix">pagamento único · 1 vídeo + amplificação multicanal</div>
+          <div class="plan-price-suffix" data-en="one-time payment · 1 video + multichannel amplification">pagamento único · 1 vídeo + amplificação multicanal</div>
         </div>
 
-        <div class="plan-section-title">Tudo do Starter, mais</div>
+        <div class="plan-section-title" data-en="Everything in Starter, plus">Tudo do Starter, mais</div>
         <ul class="plan-features">
-          <li>Repost em TikTok, Threads, Facebook, Kwai e YouTube Shorts</li>
-          <li>Automação no Direct com link rastreável</li>
-          <li>Gatilho de comentário (ex: "Comente EU QUERO")</li>
-          <li>Mensuração de cliques e tráfego</li>
-          <li>Otimização de legenda e CTA</li>
+          <li data-en="Repost on TikTok, Threads, Facebook, Kwai, and YouTube Shorts">Repost em TikTok, Threads, Facebook, Kwai e YouTube Shorts</li>
+          <li data-en="Direct DM automation with trackable link">Automação no Direct com link rastreável</li>
+          <li data-en="Comment trigger (e.g., &quot;Comment ME IN&quot;)">Gatilho de comentário (ex: "Comente EU QUERO")</li>
+          <li data-en="Click and traffic measurement">Mensuração de cliques e tráfego</li>
+          <li data-en="Caption and CTA optimization">Otimização de legenda e CTA</li>
         </ul>
 
         <div class="plan-best">
-          <strong>Melhor para</strong>
-          Marcas que querem distribuição multicanal e captação de leads via Direct.
+          <strong data-en="Best for">Melhor para</strong>
+          <span data-en="Brands that want multichannel distribution and lead capture via DM.">Marcas que querem distribuição multicanal e captação de leads via Direct.</span>
         </div>
 
-        <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta">Quero o plano Pro</a>
+        <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" data-en="Get the Pro plan">Quero o plano Pro</a>
       </div>
 
       <!-- ULTRA -->
       <div class="plan plan-ultra" id="ultra">
-        <div class="plan-badge-ultra">★ Recomendado · Performance</div>
+        <div class="plan-badge-ultra" data-en="★ Recommended · Performance">★ Recomendado · Performance</div>
         <span class="plan-ultra-halo" aria-hidden="true"></span>
         <span class="plan-ultra-spotlight-trail" aria-hidden="true"></span>
         <span class="plan-ultra-spotlight-warm" aria-hidden="true"></span>
         <span class="plan-ultra-spotlight" aria-hidden="true"></span>
 
         <div class="plan-name"><span class="plan-name-icon">🔥</span> Ultra</div>
-        <div class="plan-tagline">Campanha completa com tudo + bônus premium e mídia paga</div>
+        <div class="plan-tagline" data-en="Full campaign with everything + premium bonuses and paid media">Campanha completa com tudo + bônus premium e mídia paga</div>
 
         <div class="plan-price-block">
-          <span class="discount-tag">⚡ Oferta · 25% OFF</span>
-          <div class="plan-price-strike">De US$ 2.500</div>
+          <span class="discount-tag" data-en="⚡ Offer · 25% OFF">⚡ Oferta · 25% OFF</span>
+          <div class="plan-price-strike" data-en="Was US$ 2,500">De US$ 2.500</div>
           <div class="plan-price"><span class="plan-price-sup">US$</span>1.880</div>
-          <div class="plan-price-suffix">campanha completa · ativo de performance, não publi isolada</div>
+          <div class="plan-price-suffix" data-en="full campaign · performance asset, not a standalone branded post">campanha completa · ativo de performance, não publi isolada</div>
         </div>
 
-        <div class="plan-section-title">Tudo do Pro, mais</div>
+        <div class="plan-section-title" data-en="Everything in Pro, plus">Tudo do Pro, mais</div>
         <ul class="plan-features">
-          <li>30 dias de link na bio do Lucas Flame</li>
-          <li>1 Story de até 60s falando da marca</li>
-          <li>CTA no Story direcionando para link ou Direct</li>
-          <li>Reforço nos canais internos (quando fizer sentido)</li>
-          <li>CTA alternativo para campanhas de tráfego pago</li>
+          <li data-en="30 days of link in Lucas Flame's bio">30 dias de link na bio do Lucas Flame</li>
+          <li data-en="1 Story of up to 60s about the brand">1 Story de até 60s falando da marca</li>
+          <li data-en="Story CTA pointing to a link or DM">CTA no Story direcionando para link ou Direct</li>
+          <li data-en="Boost in internal channels (when it makes sense)">Reforço nos canais internos (quando fizer sentido)</li>
+          <li data-en="Alternative CTA for paid traffic campaigns">CTA alternativo para campanhas de tráfego pago</li>
         </ul>
 
-        <div class="plan-section-title">Performance & Mídia paga</div>
+        <div class="plan-section-title" data-en="Performance & Paid media">Performance & Mídia paga</div>
         <ul class="plan-features">
-          <li><strong style="color: var(--text);">50.000 views mínimas garantidas no Instagram</strong></li>
-          <li>Entrega via impulsionamento Meta Ads</li>
-          <li>90 dias de Ad Code / whitelisting</li>
-          <li>Possibilidade de escalar criativo vencedor em mídia paga</li>
+          <li data-en-html="&lt;strong style=&quot;color: var(--text);&quot;&gt;50,000 minimum guaranteed views on Instagram&lt;/strong&gt;"><strong style="color: var(--text);">50.000 views mínimas garantidas no Instagram</strong></li>
+          <li data-en="Delivery via Meta Ads boosting">Entrega via impulsionamento Meta Ads</li>
+          <li data-en="90 days of Ad Code / whitelisting">90 dias de Ad Code / whitelisting</li>
+          <li data-en="Option to scale winning creative in paid media">Possibilidade de escalar criativo vencedor em mídia paga</li>
         </ul>
 
         <div class="plan-best">
-          <strong>Melhor para</strong>
-          Marcas que querem transformar a parceria em ativo de performance escalável.
+          <strong data-en="Best for">Melhor para</strong>
+          <span data-en="Brands that want to turn the partnership into a scalable performance asset.">Marcas que querem transformar a parceria em ativo de performance escalável.</span>
         </div>
 
-        <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta">Quero o Ultra · garantir oferta</a>
+        <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" data-en="Get the Ultra · lock in the offer">Quero o Ultra · garantir oferta</a>
       </div>
 
     </div>
@@ -3770,16 +3804,16 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 <section class="compare">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Comparativo direto</div>
-      <h2 class="section-title">O que <em>tem e o que não tem</em> em cada plano.</h2>
-      <p class="section-sub">Tabela honesta para você decidir em 30 segundos.</p>
+      <div class="section-label" data-en="Direct comparison">Comparativo direto</div>
+      <h2 class="section-title" data-en-html="What&#x27;s &lt;em&gt;in and what&#x27;s out&lt;/em&gt; of each plan.">O que <em>tem e o que não tem</em> em cada plano.</h2>
+      <p class="section-sub" data-en="Honest table so you can decide in 30 seconds.">Tabela honesta para você decidir em 30 segundos.</p>
     </div>
 
     <div class="compare-wrap reveal">
       <table class="compare-table">
         <thead>
           <tr>
-            <th>Item</th>
+            <th data-en="Item">Item</th>
             <th>Starter<span class="compare-th-price">US$ 880</span></th>
             <th>Pro<span class="compare-th-price">US$ 1.480</span></th>
             <th class="is-ultra">Ultra<span class="compare-th-price">US$ 1.880</span></th>
@@ -3787,119 +3821,119 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         </thead>
         <tbody>
 
-          <tr class="is-group"><td colspan="4">Conteúdo principal</td></tr>
+          <tr class="is-group"><td colspan="4" data-en="Core content">Conteúdo principal</td></tr>
           <tr>
-            <td>1 Reel no Instagram do Lucas Flame</td>
+            <td data-en="1 Reel on Lucas Flame's Instagram">1 Reel no Instagram do Lucas Flame</td>
             <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Publicação em formato collab</td>
+            <td data-en="Posted in collab format">Publicação em formato collab</td>
             <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Roteiro preliminar para aprovação</td>
+            <td data-en="Preliminary script for approval">Roteiro preliminar para aprovação</td>
             <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>CTA otimizado para conversão</td>
-            <td><span class="cmp-text">Básico</span></td>
-            <td><span class="cmp-text">Otimizado</span></td>
-            <td class="is-ultra"><span class="cmp-text cmp-text-ultra">Estratégico</span></td>
+            <td data-en="CTA optimized for conversion">CTA otimizado para conversão</td>
+            <td><span class="cmp-text" data-en="Basic">Básico</span></td>
+            <td><span class="cmp-text" data-en="Optimized">Otimizado</span></td>
+            <td class="is-ultra"><span class="cmp-text cmp-text-ultra" data-en="Strategic">Estratégico</span></td>
           </tr>
 
-          <tr class="is-group"><td colspan="4">Distribuição multicanal</td></tr>
+          <tr class="is-group"><td colspan="4" data-en="Multichannel distribution">Distribuição multicanal</td></tr>
           <tr>
-            <td>Repost no TikTok, Threads, Facebook, Kwai e YT Shorts</td>
+            <td data-en="Repost on TikTok, Threads, Facebook, Kwai, and YT Shorts">Repost no TikTok, Threads, Facebook, Kwai e YT Shorts</td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
             <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-
-          <tr class="is-group"><td colspan="4">Conversão e rastreio</td></tr>
-          <tr>
-            <td>Automação no Direct com link rastreável</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td>Mensuração de cliques e tráfego</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td>CTA alternativo para tráfego pago</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
             <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
 
-          <tr class="is-group"><td colspan="4">Exposição extra</td></tr>
+          <tr class="is-group"><td colspan="4" data-en="Conversion and tracking">Conversão e rastreio</td></tr>
           <tr>
-            <td>30 dias de link na bio</td>
+            <td data-en="Direct DM automation with trackable link">Automação no Direct com link rastreável</td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
+            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>1 Story de até 60s sobre a marca</td>
+            <td data-en="Click and traffic measurement">Mensuração de cliques e tráfego</td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
+            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Reforço nos canais internos</td>
+            <td data-en="Alternative CTA for paid traffic">CTA alternativo para tráfego pago</td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
             <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
 
-          <tr class="is-group"><td colspan="4">Performance e mídia paga</td></tr>
+          <tr class="is-group"><td colspan="4" data-en="Extra exposure">Exposição extra</td></tr>
           <tr>
-            <td>50.000 views mínimas garantidas no Instagram</td>
+            <td data-en="30 days of bio link">30 dias de link na bio</td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
             <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Entrega via Meta Ads (impulsionamento)</td>
+            <td data-en="1 Story of up to 60s about the brand">1 Story de até 60s sobre a marca</td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
             <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>90 dias de Ad Code (whitelisting)</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td>Escala em mídia paga (criativo vencedor)</td>
+            <td data-en="Boost in internal channels">Reforço nos canais internos</td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
             <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
             <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
 
-          <tr class="is-group"><td colspan="4">Prazo de entrega</td></tr>
+          <tr class="is-group"><td colspan="4" data-en="Performance and paid media">Performance e mídia paga</td></tr>
           <tr>
-            <td>Entrega total</td>
-            <td><span class="cmp-text">10 dias</span></td>
-            <td><span class="cmp-text">10 dias</span></td>
-            <td class="is-ultra"><span class="cmp-text cmp-text-ultra">10 dias</span></td>
+            <td data-en="50,000 minimum guaranteed views on Instagram">50.000 views mínimas garantidas no Instagram</td>
+            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
+            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
+            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td data-en="Delivery via Meta Ads (boosting)">Entrega via Meta Ads (impulsionamento)</td>
+            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
+            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
+            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td data-en="90 days of Ad Code (whitelisting)">90 dias de Ad Code (whitelisting)</td>
+            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
+            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
+            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td data-en="Scale in paid media (winning creative)">Escala em mídia paga (criativo vencedor)</td>
+            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
+            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
+            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+
+          <tr class="is-group"><td colspan="4" data-en="Delivery timeline">Prazo de entrega</td></tr>
+          <tr>
+            <td data-en="Total delivery">Entrega total</td>
+            <td><span class="cmp-text" data-en="10 days">10 dias</span></td>
+            <td><span class="cmp-text" data-en="10 days">10 dias</span></td>
+            <td class="is-ultra"><span class="cmp-text cmp-text-ultra" data-en="10 days">10 dias</span></td>
           </tr>
 
           <tr>
             <td></td>
-            <td><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" style="padding: 10px 16px; font-size: 13px;">Aplicar</a></td>
-            <td><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" style="padding: 10px 16px; font-size: 13px; background: linear-gradient(135deg, var(--purple-400), var(--purple-600)); border: none; color: white;">Aplicar</a></td>
-            <td class="is-ultra"><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" style="padding: 10px 16px; font-size: 13px; background: linear-gradient(135deg, var(--flame), var(--purple-500)); border: none; color: white; font-weight: 700;">★ Aplicar</a></td>
+            <td><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" style="padding: 10px 16px; font-size: 13px;" data-en="Apply">Aplicar</a></td>
+            <td><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" style="padding: 10px 16px; font-size: 13px; background: linear-gradient(135deg, var(--purple-400), var(--purple-600)); border: none; color: white;" data-en="Apply">Aplicar</a></td>
+            <td class="is-ultra"><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" style="padding: 10px 16px; font-size: 13px; background: linear-gradient(135deg, var(--flame), var(--purple-500)); border: none; color: white; font-weight: 700;" data-en="★ Apply">★ Aplicar</a></td>
           </tr>
         </tbody>
       </table>
@@ -3912,72 +3946,72 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   <div class="container">
     <div class="reveal">
       <div class="section-label">FAQ</div>
-      <h2 class="section-title">Perguntas <em>diretas</em>, respostas claras.</h2>
+      <h2 class="section-title" data-en-html="&lt;em&gt;Direct&lt;/em&gt; questions, clear answers.">Perguntas <em>diretas</em>, respostas claras.</h2>
     </div>
 
     <div class="faq-list reveal">
       <div class="faq-item">
         <button class="faq-q">
-          <span>Como funciona exatamente a garantia de 50.000 views?</span>
+          <span data-en="How exactly does the 50,000 view guarantee work?">Como funciona exatamente a garantia de 50.000 views?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">A meta de 50.000 visualizações no Instagram é cumprida em até 14 dias após a publicação. Caso o post orgânico não atinja sozinho, ativo impulsionamento no Meta Ads com o mesmo criativo do post, segmentado para o público da marca. O budget de mídia, por padrão, é alinhado com a marca antes da publicação — o que garante atribuição limpa e segmentação correta. Não existe letra miúda: o critério de "view" segue exatamente o que o Instagram conta nativamente.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="The 50,000-view target on Instagram is met within 14 days of publication. If the organic post doesn't hit on its own, I activate Meta Ads boosting with the same creative, segmented to the brand's audience. The media budget is aligned with the brand before publication by default — ensuring clean attribution and accurate targeting. No fine print: the &quot;view&quot; criterion follows exactly what Instagram counts natively.">A meta de 50.000 visualizações no Instagram é cumprida em até 14 dias após a publicação. Caso o post orgânico não atinja sozinho, ativo impulsionamento no Meta Ads com o mesmo criativo do post, segmentado para o público da marca. O budget de mídia, por padrão, é alinhado com a marca antes da publicação — o que garante atribuição limpa e segmentação correta. Não existe letra miúda: o critério de "view" segue exatamente o que o Instagram conta nativamente.</div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>O que está incluído no pacote base de US$ 880?</span>
+          <span data-en="What's included in the US$ 880 base package?">O que está incluído no pacote base de US$ 880?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">1 vídeo no Instagram (Reels), repost em todas as redes (TikTok, Threads, Facebook, Kwai, YouTube Shorts), automação no Direct com link rastreável, 30 dias de link na bio, 90 dias de Ad Code para você rodar como anúncio na sua conta, e a garantia de 50.000 views. Roteiro estratégico está incluso — você não está pagando só por exposição, está pagando por uma peça pensada para converter.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="1 Instagram video (Reel), repost across every network (TikTok, Threads, Facebook, Kwai, YouTube Shorts), DM automation with trackable link, 30 days of bio link, 90 days of Ad Code so you can run it as an ad from your account, and the 50,000-view guarantee. Strategic script is included — you're not paying for exposure alone, you're paying for a piece engineered to convert.">1 vídeo no Instagram (Reels), repost em todas as redes (TikTok, Threads, Facebook, Kwai, YouTube Shorts), automação no Direct com link rastreável, 30 dias de link na bio, 90 dias de Ad Code para você rodar como anúncio na sua conta, e a garantia de 50.000 views. Roteiro estratégico está incluso — você não está pagando só por exposição, está pagando por uma peça pensada para converter.</div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>Qual o prazo total entre fechar e o vídeo no ar?</span>
+          <span data-en="What's the total timeline from closing the deal to the video going live?">Qual o prazo total entre fechar e o vídeo no ar?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">10 dias úteis: 5 dias para roteiro preliminar (com aprovação da marca) + 5 dias para produção e finalização do vídeo. A publicação é agendada conforme o melhor horário da audiência. Se houver evento, lançamento ou janela específica, alinhamos isso no brief.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="10 business days: 5 days for the preliminary script (with brand approval) + 5 days for production and final delivery. Publication is scheduled at the best time for the audience. If there's an event, launch, or specific window, we align that during the brief.">10 dias úteis: 5 dias para roteiro preliminar (com aprovação da marca) + 5 dias para produção e finalização do vídeo. A publicação é agendada conforme o melhor horário da audiência. Se houver evento, lançamento ou janela específica, alinhamos isso no brief.</div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>Como é feito o pagamento?</span>
+          <span data-en="How does payment work?">Como é feito o pagamento?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Apenas PayPal ou transferência bancária. Sem cartão, sem parcelamento. 100% antecipado para iniciar o roteiro, com nota fiscal emitida pela Studio Flame. Para pacotes acima de US$ 5.000, é possível combinar 50/50 (sinal + entrega).</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="PayPal or bank transfer only. No credit card, no installments. 100% upfront to start the script, with invoice issued by Studio Flame. For packages above US$ 5,000, 50/50 can be arranged (deposit + delivery).">Apenas PayPal ou transferência bancária. Sem cartão, sem parcelamento. 100% antecipado para iniciar o roteiro, com nota fiscal emitida pela Studio Flame. Para pacotes acima de US$ 5.000, é possível combinar 50/50 (sinal + entrega).</div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>O que é "Ad Code" e por que isso importa?</span>
+          <span data-en="What is &quot;Ad Code&quot; and why does it matter?">O que é "Ad Code" e por que isso importa?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Ad Code (também chamado de whitelisting ou partnership ad) é uma autorização para sua marca rodar o meu vídeo como anúncio na sua conta de Meta Ads, mas mantendo meu @ como criador. Resultado: o anúncio carrega a credibilidade do meu perfil, sua segmentação e seu pixel. CPMs caem, CTRs sobem. Por 90 dias você roda o quanto quiser.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="Ad Code (also known as whitelisting or partnership ad) is authorization for your brand to run my video as an ad from your Meta Ads account while keeping my @ as the creator. The result: the ad carries my profile's credibility, your targeting, and your pixel. CPMs drop, CTRs rise. For 90 days, run it as much as you want.">Ad Code (também chamado de whitelisting ou partnership ad) é uma autorização para sua marca rodar o meu vídeo como anúncio na sua conta de Meta Ads, mas mantendo meu @ como criador. Resultado: o anúncio carrega a credibilidade do meu perfil, sua segmentação e seu pixel. CPMs caem, CTRs sobem. Por 90 dias você roda o quanto quiser.</div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>Quem é o público-alvo da minha audiência?</span>
+          <span data-en="Who is the target audience of my following?">Quem é o público-alvo da minha audiência?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Adultos com poder de compra: 68% entre 25 e 44 anos, 65% homens, 88% no Brasil — concentrados em SP, RJ, Fortaleza e BH. Audiência altamente engajada com tecnologia, IA, ferramentas digitais, produtividade, finanças e empreendedorismo. Para marcas dessas verticais, é um match direto.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="Adults with buying power: 68% between 25 and 44, 65% men, 88% in Brazil — concentrated in São Paulo, Rio, Fortaleza, and Belo Horizonte. Highly engaged with technology, AI, digital tools, productivity, finance, and entrepreneurship. For brands in these verticals, it's a direct match.">Adultos com poder de compra: 68% entre 25 e 44 anos, 65% homens, 88% no Brasil — concentrados em SP, RJ, Fortaleza e BH. Audiência altamente engajada com tecnologia, IA, ferramentas digitais, produtividade, finanças e empreendedorismo. Para marcas dessas verticais, é um match direto.</div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>Vocês trabalham com exclusividade de categoria?</span>
+          <span data-en="Do you offer category exclusivity?">Vocês trabalham com exclusividade de categoria?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Para o pacote Spark, não — porque é uma campanha pontual. Para Blaze e Inferno, sim, é negociável: durante o período da parceria, não publico para concorrentes diretos da sua categoria. O escopo da exclusividade (categoria, geografia, prazo) é alinhado caso a caso.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="For the Starter package, no — it's a one-off campaign. For Pro and Ultra, yes, it's negotiable: during the partnership period, I won't post for direct competitors in your category. The scope of exclusivity (category, geography, timeframe) is aligned case by case.">Para o pacote Spark, não — porque é uma campanha pontual. Para Blaze e Inferno, sim, é negociável: durante o período da parceria, não publico para concorrentes diretos da sua categoria. O escopo da exclusividade (categoria, geografia, prazo) é alinhado caso a caso.</div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>E se a marca não for aprovada?</span>
+          <span data-en="What if the brand isn't approved?">E se a marca não for aprovada?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Filtro existe para entregar resultado. Se sua marca não tem fit com a audiência, eu retorno honestamente — e indico um caminho ou outro creator quando faz sentido. Não vendo só por vender. Não é falta de respeito, é o oposto: é a única forma de manter a régua alta tanto pra quem fecha quanto pra quem assiste.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="The filter exists to deliver results. If your brand doesn't fit the audience, I respond honestly — and point you to a path or another creator when it makes sense. I don't sell just to sell. It's not disrespect, it's the opposite: it's the only way to keep the standard high for both who signs and who watches.">Filtro existe para entregar resultado. Se sua marca não tem fit com a audiência, eu retorno honestamente — e indico um caminho ou outro creator quando faz sentido. Não vendo só por vender. Não é falta de respeito, é o oposto: é a única forma de manter a régua alta tanto pra quem fecha quanto pra quem assiste.</div></div>
       </div>
     </div>
   </div>
@@ -3989,15 +4023,15 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     <div class="apply-card reveal">
       <div class="apply-grid">
         <div class="apply-info">
-          <div class="section-label">Aplicar para parceria</div>
-          <h2 class="section-title" style="font-size: clamp(32px, 4vw, 52px);">Quando o filtro <em>é alto</em>, o resultado é previsível.</h2>
-          <p>Não é um formulário de orçamento genérico. É uma triagem real. Marcas com fit tem retorno em até 48h úteis com uma estratégia inicial — não com proposta padrão de PDF.</p>
+          <div class="section-label" data-en="Apply for partnership">Aplicar para parceria</div>
+          <h2 class="section-title" style="font-size: clamp(32px, 4vw, 52px);" data-en-html="When the filter &lt;em&gt;is high&lt;/em&gt;, the result is predictable.">Quando o filtro <em>é alto</em>, o resultado é previsível.</h2>
+          <p data-en="This isn't a generic quote form. It's a real screening. Brands with fit get a response within 48 business hours with an initial strategy — not a templated PDF proposal.">Não é um formulário de orçamento genérico. É uma triagem real. Marcas com fit tem retorno em até 48h úteis com uma estratégia inicial — não com proposta padrão de PDF.</p>
 
           <ul class="apply-perks">
-            <li>Resposta em até 48h úteis</li>
-            <li>Roteiro estratégico antes do contrato</li>
-            <li>Sem proposta genérica de PDF</li>
-            <li>WhatsApp direto após aprovação</li>
+            <li data-en="Response within 48 business hours">Resposta em até 48h úteis</li>
+            <li data-en="Strategic script before signing">Roteiro estratégico antes do contrato</li>
+            <li data-en="No generic PDF proposal">Sem proposta genérica de PDF</li>
+            <li data-en="Direct WhatsApp after approval">WhatsApp direto após aprovação</li>
           </ul>
         </div>
 
@@ -4011,65 +4045,65 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
           <div class="form-row">
             <div class="field">
-              <label for="name">Seu nome</label>
+              <label for="name" data-en="Your name">Seu nome</label>
               <input type="text" id="name" name="name" required>
             </div>
             <div class="field">
-              <label for="role">Cargo</label>
-              <input type="text" id="role" name="role" placeholder="Ex: CMO, Head of Growth" required>
+              <label for="role" data-en="Role">Cargo</label>
+              <input type="text" id="role" name="role" placeholder="Ex: CMO, Head of Growth" data-en-placeholder="e.g. CMO, Head of Growth" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="field">
-              <label for="email">E-mail corporativo</label>
+              <label for="email" data-en="Business email">E-mail corporativo</label>
               <input type="email" id="email" name="email" required>
             </div>
             <div class="field">
-              <label for="whatsapp">WhatsApp</label>
+              <label for="whatsapp" data-en="WhatsApp">WhatsApp</label>
               <input type="tel" id="whatsapp" name="whatsapp" placeholder="+55 11 9..." required>
             </div>
           </div>
 
           <div class="field">
-            <label for="brand">Marca / Empresa</label>
+            <label for="brand" data-en="Brand / Company">Marca / Empresa</label>
             <input type="text" id="brand" name="brand" required>
           </div>
 
           <div class="form-row">
             <div class="field">
-              <label for="vertical">Vertical</label>
+              <label for="vertical" data-en="Vertical">Vertical</label>
               <select id="vertical" name="vertical" required>
-                <option value="">Selecione</option>
-                <option value="tech">Tecnologia / SaaS</option>
-                <option value="ai">IA / Ferramentas digitais</option>
-                <option value="finance">Finanças</option>
-                <option value="education">Educação</option>
-                <option value="ecommerce">E-commerce</option>
-                <option value="b2b">B2B / Serviços</option>
-                <option value="other">Outro</option>
+                <option value="" data-en="Select">Selecione</option>
+                <option value="tech" data-en="Tech / SaaS">Tecnologia / SaaS</option>
+                <option value="ai" data-en="AI / Digital tools">IA / Ferramentas digitais</option>
+                <option value="finance" data-en="Finance">Finanças</option>
+                <option value="education" data-en="Education">Educação</option>
+                <option value="ecommerce" data-en="E-commerce">E-commerce</option>
+                <option value="b2b" data-en="B2B / Services">B2B / Serviços</option>
+                <option value="other" data-en="Other">Outro</option>
               </select>
             </div>
             <div class="field">
-              <label for="budget">Budget estimado</label>
+              <label for="budget" data-en="Estimated budget">Budget estimado</label>
               <select id="budget" name="budget" required>
-                <option value="">Selecione</option>
-                <option value="lt-5k">Até US$ 5.000</option>
-                <option value="5-15k">US$ 5.000 – 15.000</option>
-                <option value="15-30k">US$ 15.000 – 30.000</option>
-                <option value="30k-plus">Acima de US$ 30.000</option>
-                <option value="undefined">Em definição</option>
+                <option value="" data-en="Select">Selecione</option>
+                <option value="lt-5k" data-en="Up to US$ 5,000">Até US$ 5.000</option>
+                <option value="5-15k" data-en="US$ 5,000 – 15,000">US$ 5.000 – 15.000</option>
+                <option value="15-30k" data-en="US$ 15,000 – 30,000">US$ 15.000 – 30.000</option>
+                <option value="30k-plus" data-en="Above US$ 30,000">Acima de US$ 30.000</option>
+                <option value="undefined" data-en="TBD">Em definição</option>
               </select>
             </div>
           </div>
 
           <div class="field">
-            <label for="goal">Qual o objetivo da campanha?</label>
-            <textarea id="goal" name="goal" placeholder="Conta sobre o produto, prazo, KPI e o que você espera dessa parceria." required></textarea>
+            <label for="goal" data-en="What's the campaign goal?">Qual o objetivo da campanha?</label>
+            <textarea id="goal" name="goal" placeholder="Conta sobre o produto, prazo, KPI e o que você espera dessa parceria." data-en-placeholder="Tell me about the product, timeline, KPI, and what you expect from this partnership." required></textarea>
           </div>
 
-          <button type="submit" class="form-submit">Enviar aplicação →</button>
-          <div class="form-disclaim">Resposta em até 48h úteis. Seus dados ficam comigo. Sem spam.</div>
+          <button type="submit" class="form-submit" data-en="Submit application →">Enviar aplicação →</button>
+          <div class="form-disclaim" data-en="Response within 48 business hours. Your data stays with me. No spam.">Resposta em até 48h úteis. Seus dados ficam comigo. Sem spam.</div>
         </form>
       </div>
     </div>
@@ -4085,22 +4119,22 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           <span class="logo-mark">LF</span>
           <span>Lucas Flame</span>
         </a>
-        <p class="footer-about">Creator e fundador da Studio Flame. Parcerias com marcas que buscam previsibilidade real, não exposição decorativa.</p>
+        <p class="footer-about" data-en="Creator and founder of Studio Flame. Partnerships with brands that want real predictability, not decorative exposure.">Creator e fundador da Studio Flame. Parcerias com marcas que buscam previsibilidade real, não exposição decorativa.</p>
       </div>
       <div class="footer-col">
-        <h4>Navegação</h4>
+        <h4 data-en="Navigation">Navegação</h4>
         <ul>
-          <li><a href="#numbers">Números</a></li>
-          <li><a href="#showreel">Vídeos</a></li>
-          <li><a href="#offer">Oferta</a></li>
-          <li><a href="#plans">Planos</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#numbers" data-en="Numbers">Números</a></li>
+          <li><a href="#showreel" data-en="Videos">Vídeos</a></li>
+          <li><a href="#offer" data-en="Offer">Oferta</a></li>
+          <li><a href="#plans" data-en="Plans">Planos</a></li>
+          <li><a href="#faq" data-en="FAQ">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contato</h4>
+        <h4 data-en="Contact">Contato</h4>
         <ul>
-          <li><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer">Aplicar para parceria</a></li>
+          <li><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" data-en="Apply for partnership">Aplicar para parceria</a></li>
           <li><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
           <li><a href="https://instagram.com/lucasflame" target="_blank">@lucasflame</a></li>
           <li><a href="mailto:parcerias@studioflame.com.br">parcerias@studioflame.com.br</a></li>
@@ -4108,7 +4142,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 Studio Flame · Todos os direitos reservados</div>
+      <div data-en="© 2026 Studio Flame · All rights reserved">© 2026 Studio Flame · Todos os direitos reservados</div>
       <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;">Built for performance</div>
     </div>
   </div>
@@ -4776,8 +4810,129 @@ if (ref) ref.value = document.referrer || '';
 document.getElementById('applyForm').addEventListener('submit', (e) => {
   e.preventDefault();
   // Conectar a Webflow Forms / Zapier / endpoint custom
-  alert('Aplicação enviada! Você receberá um retorno em até 48h úteis.');
+  alert(window.__LF_LANG === 'en' ? 'Application submitted! You\'ll receive a response within 48 business hours.' : 'Aplicação enviada! Você receberá um retorno em até 48h úteis.');
 });
+
+
+// ============ I18N: PT/EN toggle ============
+(function(){
+  const STORAGE_KEY = 'lf_lang';
+  const META_I18N = {
+    pt: {
+      title: 'Lucas Flame — Parcerias com Marcas | 50.000 views garantidas no Instagram',
+      description: 'Parceria de creator com previsibilidade real: 50.000 visualizações mínimas garantidas no Instagram, repost em todas as redes, 30 dias de link na bio e 90 dias de Ad Code. A partir de US$ 880 por vídeo.',
+      ogTitle: 'Lucas Flame — Parcerias com Marcas com garantia de performance',
+      ogDescription: 'Mais de 813 mil seguidores. +5,2 milhões de contas alcançadas em 90 dias. Garantia de 50.000 views por vídeo no Instagram. A partir de US$ 880.',
+      ogImageAlt: 'Lucas Flame — Creator com 813k+ seguidores, parcerias com marcas premium',
+      ogLocale: 'pt_BR'
+    },
+    en: {
+      title: 'Lucas Flame — Brand Partnerships | 50,000 Guaranteed Instagram Views',
+      description: 'Creator partnership with real predictability: 50,000 minimum guaranteed views on Instagram, repost across every network, 30 days of bio link, and 90 days of Ad Code. Starting at US$ 880 per video.',
+      ogTitle: 'Lucas Flame — Brand partnerships with a performance guarantee',
+      ogDescription: '813k+ followers. 5.2M+ accounts reached in 90 days. 50,000-view guarantee per Instagram video. Starting at US$ 880.',
+      ogImageAlt: 'Lucas Flame — Creator with 813k+ followers, partnerships with premium brands',
+      ogLocale: 'en_US'
+    }
+  };
+
+  function setMeta(name, value, attr){
+    attr = attr || 'name';
+    const el = document.querySelector(`meta[${attr}="${name}"]`);
+    if (el) el.setAttribute('content', value);
+  }
+
+  function applyLang(lang){
+    if (lang !== 'pt' && lang !== 'en') lang = 'pt';
+    window.__LF_LANG = lang;
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
+
+    // Cache original PT content on first run (so we can flip back from EN)
+    if (!document.body.dataset.ptCached){
+      document.querySelectorAll('[data-en]').forEach(el => {
+        if (!el.dataset.pt) el.dataset.pt = el.textContent;
+      });
+      document.querySelectorAll('[data-en-html]').forEach(el => {
+        if (!el.dataset.ptHtml) el.dataset.ptHtml = el.innerHTML;
+      });
+      document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+        if (!el.dataset.ptPlaceholder) el.dataset.ptPlaceholder = el.getAttribute('placeholder') || '';
+      });
+      document.querySelectorAll('[data-en-aria-label]').forEach(el => {
+        if (!el.dataset.ptAriaLabel) el.dataset.ptAriaLabel = el.getAttribute('aria-label') || '';
+      });
+      document.body.dataset.ptCached = '1';
+    }
+
+    // Apply textContent translations
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const target = lang === 'en' ? el.dataset.en : el.dataset.pt;
+      if (target != null) el.textContent = target;
+    });
+    // Apply HTML translations
+    document.querySelectorAll('[data-en-html]').forEach(el => {
+      const target = lang === 'en' ? el.dataset.enHtml : el.dataset.ptHtml;
+      if (target != null) el.innerHTML = target;
+    });
+    // Placeholders
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+      const target = lang === 'en' ? el.dataset.enPlaceholder : el.dataset.ptPlaceholder;
+      if (target != null) el.setAttribute('placeholder', target);
+    });
+    // Aria labels
+    document.querySelectorAll('[data-en-aria-label]').forEach(el => {
+      const target = lang === 'en' ? el.dataset.enAriaLabel : el.dataset.ptAriaLabel;
+      if (target != null) el.setAttribute('aria-label', target);
+    });
+
+    // Meta + title
+    const m = META_I18N[lang];
+    document.title = m.title;
+    setMeta('description', m.description);
+    setMeta('og:title', m.ogTitle, 'property');
+    setMeta('og:description', m.ogDescription, 'property');
+    setMeta('og:image:alt', m.ogImageAlt, 'property');
+    setMeta('og:locale', m.ogLocale, 'property');
+    setMeta('twitter:title', m.ogTitle);
+    setMeta('twitter:description', m.ogDescription);
+
+    // Toggle button state
+    const tgl = document.getElementById('langToggle');
+    if (tgl){
+      tgl.querySelectorAll('[data-lang-pt],[data-lang-en]').forEach(s => s.classList.remove('is-active'));
+      tgl.querySelector(`[data-lang-${lang}]`).classList.add('is-active');
+    }
+
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch(e) {}
+
+    // Re-measure any open FAQ items (translated text changes height)
+    document.querySelectorAll('.faq-item.open').forEach(item => {
+      const a = item.querySelector('.faq-a');
+      if (a) a.style.maxHeight = a.scrollHeight + 'px';
+    });
+  }
+
+  // Initial language: localStorage > browser pref > pt
+  let initial = 'pt';
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved === 'pt' || saved === 'en') initial = saved;
+    else if ((navigator.language || '').toLowerCase().startsWith('en')) initial = 'en';
+  } catch(e) {}
+
+  // Wire up toggle
+  const tgl = document.getElementById('langToggle');
+  if (tgl){
+    tgl.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-lang') || 'pt';
+      applyLang(cur === 'pt' ? 'en' : 'pt');
+    });
+  }
+
+  applyLang(initial);
+})();
+
 </script>
 
 </body>
