@@ -4048,11 +4048,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           </ul>
         </div>
 
-        <form class="form" id="applyForm" method="POST" action="https://formsubmit.co/parcerias@studioflame.com.br">
-          <input type="hidden" name="_subject" value="Nova aplicação — Studio Flame">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <form class="form" id="applyForm" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="750494c9-98cc-4cbb-9e90-3d96243cd848">
+          <input type="hidden" name="subject" value="Nova aplicação — Studio Flame">
+          <input type="hidden" name="from_name" value="Studio Flame · Site">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="utm_source" id="utm_source">
           <input type="hidden" name="utm_medium" id="utm_medium">
           <input type="hidden" name="utm_campaign" id="utm_campaign">
@@ -4848,7 +4848,7 @@ if (ref) ref.value = document.referrer || '';
   });
 })();
 
-// Form submit — AJAX to FormSubmit (delivers to parcerias@studioflame.com.br)
+// Form submit — AJAX to Web3Forms (delivers to parcerias@studioflame.com.br)
 document.getElementById('applyForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.currentTarget;
@@ -4862,12 +4862,13 @@ document.getElementById('applyForm').addEventListener('submit', async (e) => {
   try {
     const payload = {};
     new FormData(form).forEach((v, k) => { payload[k] = v; });
-    const res = await fetch('https://formsubmit.co/ajax/parcerias@studioflame.com.br', {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error('submission_failed');
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.success) throw new Error(data.message || 'submission_failed');
     alert(lang === 'en'
       ? 'Application submitted! You\'ll receive a response within 48 business hours.'
       : 'Aplicação enviada! Você receberá um retorno em até 48h úteis.');
