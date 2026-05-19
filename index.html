@@ -1074,6 +1074,34 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   }
   .galaxy-mobile-card.is-core .gm-value{ font-size: 56px; }
   .galaxy-mobile-card .gm-desc{ font-size: 12px; color: var(--text-3); }
+
+  /* Interactive 3D tilt + lift on hover / touch */
+  .galaxy-mobile-card{
+    cursor: pointer;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition:
+      border-color .3s ease,
+      background .3s ease,
+      box-shadow .3s ease,
+      transform .35s cubic-bezier(.2,.7,.3,1);
+  }
+  .galaxy-mobile-card:hover,
+  .galaxy-mobile-card.is-touching{
+    border-color: rgba(236, 72, 153, 0.45);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(236, 72, 153, 0.06));
+    box-shadow:
+      0 20px 40px -10px rgba(139, 92, 246, 0.35),
+      0 0 24px -8px rgba(236, 72, 153, 0.40);
+  }
+  .galaxy-mobile-card.is-core:hover,
+  .galaxy-mobile-card.is-core.is-touching{
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.28), rgba(139, 92, 246, 0.18));
+    border-color: rgba(236, 72, 153, 0.5);
+    box-shadow:
+      0 24px 50px -12px rgba(236, 72, 153, 0.45),
+      0 0 32px -10px rgba(236, 72, 153, 0.50);
+  }
 }
 
 /* ============ SHOWREEL / VIDEOS ============ */
@@ -4845,6 +4873,60 @@ if (ref) ref.value = document.referrer || '';
     video.style.transition = 'opacity .5s ease';
     img.style.transition = 'opacity .5s ease';
     video.style.opacity = '0';
+  });
+})();
+
+// ============ GALAXY MOBILE CARDS — 3D tilt on hover / touch ============
+(function(){
+  const cards = document.querySelectorAll('.galaxy-mobile-card');
+  if (!cards.length) return;
+  const MAX_ROT_X = 8;
+  const MAX_ROT_Y = 10;
+
+  cards.forEach(card => {
+    let rafId = 0;
+    let pending = null;
+
+    function applyTilt(clientX, clientY){
+      const rect = card.getBoundingClientRect();
+      const px = (clientX - rect.left) / rect.width;
+      const py = (clientY - rect.top) / rect.height;
+      const rotY = (px - 0.5) * MAX_ROT_Y * 2;
+      const rotX = (0.5 - py) * MAX_ROT_X * 2;
+      card.style.transform =
+        `perspective(800px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateZ(6px)`;
+    }
+    function schedule(clientX, clientY){
+      pending = { clientX, clientY };
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = 0;
+        if (pending) applyTilt(pending.clientX, pending.clientY);
+        pending = null;
+      });
+    }
+    function reset(){
+      if (rafId){ cancelAnimationFrame(rafId); rafId = 0; }
+      pending = null;
+      card.style.transform = '';
+      card.classList.remove('is-touching');
+    }
+
+    card.addEventListener('mousemove', e => schedule(e.clientX, e.clientY));
+    card.addEventListener('mouseleave', reset);
+
+    card.addEventListener('touchstart', e => {
+      const t = e.touches[0];
+      if (!t) return;
+      card.classList.add('is-touching');
+      schedule(t.clientX, t.clientY);
+    }, { passive: true });
+    card.addEventListener('touchmove', e => {
+      const t = e.touches[0];
+      if (t) schedule(t.clientX, t.clientY);
+    }, { passive: true });
+    card.addEventListener('touchend', reset);
+    card.addEventListener('touchcancel', reset);
   });
 })();
 
