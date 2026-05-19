@@ -1578,6 +1578,22 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 32px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    border-color .3s ease,
+    background .3s ease,
+    box-shadow .3s ease,
+    transform .35s cubic-bezier(.2,.7,.3,1);
+}
+.demo-card:hover,
+.demo-card.is-touching{
+  border-color: rgba(236, 72, 153, 0.45);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.10), rgba(236, 72, 153, 0.05));
+  box-shadow:
+    0 24px 50px -12px rgba(139, 92, 246, 0.35),
+    0 0 28px -8px rgba(236, 72, 153, 0.40);
 }
 .demo-card-title{
   font-family: var(--mono);
@@ -4876,9 +4892,9 @@ if (ref) ref.value = document.referrer || '';
   });
 })();
 
-// ============ GALAXY MOBILE CARDS — 3D tilt on hover / touch ============
+// ============ 3D tilt on hover / touch (galaxy mobile cards + demo cards) ============
 (function(){
-  const cards = document.querySelectorAll('.galaxy-mobile-card');
+  const cards = document.querySelectorAll('.galaxy-mobile-card, .demo-card');
   if (!cards.length) return;
   const MAX_ROT_X = 8;
   const MAX_ROT_Y = 10;
