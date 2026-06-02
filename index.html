@@ -12,7 +12,7 @@
 
 <!-- SEO -->
 <title>Lucas Flame — Parcerias com Marcas | 50.000 views garantidas no Instagram</title>
-<meta name="description" content="Parceria de creator com previsibilidade real: 50.000 visualizações mínimas garantidas no Instagram, repost em todas as redes, 30 dias de link na bio e 90 dias de Ad Code. A partir de US$ 880 por vídeo.">
+<meta name="description" content="Parceria de creator com previsibilidade real: 50.000 visualizações mínimas garantidas no Instagram, repost em todas as redes, 30 dias de link na bio e 90 dias de Ad Code. US$ 880 por parceria.">
 <meta name="keywords" content="creator parceria marca, influencer marketing, instagram reels, lucas flame, publi instagram, parceria creator, branded content brasil, ad code instagram, garantia views instagram">
 <meta name="author" content="Lucas Flame">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Lucas Flame">
 <meta property="og:url" content="https://studioflame.com.br/">
 <meta property="og:title" content="Lucas Flame — Parcerias com Marcas com garantia de performance">
-<meta property="og:description" content="Mais de 813 mil seguidores. +5,2 milhões de contas alcançadas em 90 dias. Garantia de 50.000 views por vídeo no Instagram. A partir de US$ 880.">
+<meta property="og:description" content="Mais de 813 mil seguidores. +5,2 milhões de contas alcançadas em 90 dias. Garantia de 50.000 views por vídeo no Instagram. US$ 880 por parceria.">
 <meta property="og:image" content="https://studioflame.com.br/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -34,7 +34,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://studioflame.com.br/">
 <meta name="twitter:title" content="Lucas Flame — Parcerias com Marcas com garantia de performance">
-<meta name="twitter:description" content="Mais de 813 mil seguidores. +5,2 milhões de contas alcançadas em 90 dias. Garantia de 50.000 views por vídeo.">
+<meta name="twitter:description" content="Mais de 813 mil seguidores. +5,2 milhões de contas alcançadas em 90 dias. Garantia de 50.000 views por vídeo. US$ 880 por parceria.">
 <meta name="twitter:image" content="https://studioflame.com.br/og-cover.jpg">
 
 <!-- Structured Data: Person -->
@@ -67,11 +67,10 @@
   },
   "description": "Vídeo em formato collab no Instagram, repost nas demais redes, automação no Direct, link na bio e Ad Code ativado para escala em mídia paga. Garantia de 50.000 views mínimas no Instagram.",
   "offers": {
-    "@type": "AggregateOffer",
+    "@type": "Offer",
     "priceCurrency": "USD",
-    "lowPrice": "880",
-    "highPrice": "1880",
-    "offerCount": "3"
+    "price": "880",
+    "availability": "https://schema.org/InStock"
   },
   "areaServed": "Worldwide"
 }
@@ -2259,9 +2258,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 .plans-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 20px;
-  margin-top: 56px;
+  margin: 56px auto 0;
+  max-width: 480px;
   align-items: stretch;
 }
 .plan{
@@ -2784,6 +2784,49 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   color: white;
 }
 
+/* Single-plan checklist (replaces 3-plan comparison table) */
+.checklist-wrap{ padding: 36px 32px; }
+.checklist-group + .checklist-group{
+  margin-top: 28px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+}
+.checklist-group-title{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+.checklist{
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex; flex-direction: column;
+  gap: 12px;
+}
+.checklist li{
+  display: flex; align-items: flex-start; gap: 14px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.checklist-icon{
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--magenta-400), var(--purple-500));
+  display: grid; place-items: center;
+  margin-top: 1px;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.25);
+}
+.checklist-icon svg{ width: 12px; height: 12px; }
+@media (max-width: 880px){
+  .checklist-wrap{ padding: 26px 22px; }
+  .checklist li{ font-size: 14px; }
+}
+
 @media (max-width: 880px){
   .compare{ padding: 60px 0 70px; }
   .compare-wrap{ overflow-x: auto; }
@@ -3104,8 +3147,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <h1 data-en-html="Your brand on &lt;em&gt;millions of screens&lt;/em&gt;, with real predictability.">Sua marca em <em>milhões de telas</em>, com previsibilidade real.</h1>
         <p class="hero-sub" data-en-html="Creator partnership with &lt;strong&gt;50,000 minimum guaranteed views&lt;/strong&gt; per Instagram video, repost across every network, and 90 days of Ad Code. No guesswork. No vague promises.">Parceria de creator com <strong>50.000 visualizações mínimas garantidas</strong> por vídeo no Instagram, repost em todas as redes e 90 dias de Ad Code. Sem achismo. Sem promessa vaga.</p>
         <div class="hero-ctas">
-          <a href="#ultra" class="btn btn-primary" data-en-html="Apply for partnership &lt;span class=&quot;btn-arrow&quot;&gt;→&lt;/span&gt;">Aplicar para parceria <span class="btn-arrow">→</span></a>
-          <a href="#ultra" class="btn btn-ghost" data-en="See what's included">Ver o que está incluso</a>
+          <a href="#parceria" class="btn btn-primary" data-en-html="Apply for partnership &lt;span class=&quot;btn-arrow&quot;&gt;→&lt;/span&gt;">Aplicar para parceria <span class="btn-arrow">→</span></a>
+          <a href="#parceria" class="btn btn-ghost" data-en="See what's included">Ver o que está incluso</a>
         </div>
         <div class="hero-stats">
           <div class="stat">
@@ -3596,7 +3639,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       <div class="offer-grid">
         <div>
           <div class="section-label" style="color: var(--purple-200);" data-en="Included by default">Incluso por padrão</div>
-          <h3 style="font-family: var(--display); font-size: clamp(28px, 3vw, 38px); margin: 8px 0 0; letter-spacing: -0.01em;" data-en="Ultra Package: full campaign with performance guarantee">Pacote Ultra: campanha completa com garantia de performance</h3>
+          <h3 style="font-family: var(--display); font-size: clamp(28px, 3vw, 38px); margin: 8px 0 0; letter-spacing: -0.01em;" data-en="Pacote de Parceria: full campaign with performance guarantee">Pacote de Parceria: campanha completa com garantia de performance</h3>
 
           <div class="offer-feat-list">
             <div class="offer-feat">
@@ -3645,10 +3688,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         </div>
 
         <div class="price-card">
-          <div class="price-tag" data-en="Ultra package">Pacote Ultra</div>
-          <span class="discount-tag" data-en="⚡ Offer · 25% OFF">⚡ Oferta · 25% OFF</span>
-          <div class="plan-price-strike" data-en="Was US$ 2,500">De US$ 2.500</div>
-          <div class="price-value"><sup>US$</sup> 1.880</div>
+          <div class="price-tag" data-en="Pacote de Parceria">Pacote de Parceria</div>
+          <div class="plan-price-strike" data-en="Was US$ 1,880">De US$ 1.880</div>
+          <div class="price-value"><sup>US$</sup> 880</div>
           <div class="price-unit" data-en="full performance campaign">campanha completa de performance</div>
 
           <div class="price-payment">
@@ -3762,100 +3804,43 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 <section class="plans" id="plans">
   <div class="container">
     <div class="reveal">
-      <div class="section-label" data-en="Plans">Planos</div>
-      <h2 class="section-title" data-en-html="Choose the &lt;em&gt;intensity&lt;/em&gt; of your presence.">Escolha a <em>intensidade</em> da sua presença.</h2>
-      <p class="section-sub" data-en="Three tiers built for different brand moments: from first test to full campaign with paid media and a performance guarantee.">Três níveis pensados para diferentes momentos da marca: do primeiro teste à campanha completa com mídia paga e garantia de performance.</p>
+      <div class="section-label" data-en="Partnership">Parceria</div>
+      <h2 class="section-title" data-en-html="Everything in a &lt;em&gt;single package&lt;/em&gt;, no extra fees.">Tudo em um <em>pacote só</em>, sem cobranças extras.</h2>
+      <p class="section-sub" data-en="One partnership tier — strategic script, multi-platform distribution, paid media, and a real performance guarantee, all rolled into a single price.">Um pacote único — roteiro estratégico, distribuição multi-plataforma, mídia paga e garantia real de performance, tudo dentro de um preço só.</p>
     </div>
 
     <div class="plans-grid reveal">
 
-      <!-- STARTER -->
-      <div class="plan">
-        <div class="plan-name"><span class="plan-name-icon">⚡</span> Starter</div>
-        <div class="plan-tagline" data-en="Single Instagram collab video">Vídeo individual em collab no Instagram</div>
-
-        <div class="plan-price-block">
-          <div class="plan-price"><span class="plan-price-sup">US$</span>880</div>
-          <div class="plan-price-suffix" data-en="one-time payment · 1 video">pagamento único · 1 vídeo</div>
-        </div>
-
-        <div class="plan-section-title" data-en="What's included">O que está incluso</div>
-        <ul class="plan-features">
-          <li data-en="1 Reel on Lucas Flame's Instagram">1 Reel no Instagram do Lucas Flame</li>
-          <li data-en="Posted in collab format with the brand">Publicação em formato collab com a marca</li>
-          <li data-en="Brand @ tagged in the caption">Marcação do @ da empresa na legenda</li>
-          <li data-en="Preliminary script for approval">Roteiro preliminar para aprovação</li>
-          <li data-en="Production and final video delivery">Produção e entrega do vídeo final</li>
-          <li data-en="Primary CTA inside the content">CTA principal dentro do conteúdo</li>
-          <li data-en="Total timeline: up to 10 days">Prazo total: até 10 dias</li>
-        </ul>
-
-        <div class="plan-best">
-          <strong data-en="Best for">Melhor para</strong>
-          <span data-en="Brands that want to validate a message or make a quick entry into the audience.">Marcas que querem validar uma mensagem ou fazer entrada rápida na audiência.</span>
-        </div>
-
-        <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" data-en="Start with the Starter plan">Quero começar com o Starter</a>
-      </div>
-
-      <!-- PRO -->
-      <div class="plan plan-featured">
-        <div class="plan-name"><span class="plan-name-icon">🚀</span> Pro</div>
-        <div class="plan-tagline" data-en="Video + repost across every network + automation with link">Vídeo + repost em todas as redes + automação com link</div>
-
-        <div class="plan-price-block">
-          <div class="plan-price"><span class="plan-price-sup">US$</span>1.480</div>
-          <div class="plan-price-suffix" data-en="one-time payment · 1 video + multichannel amplification">pagamento único · 1 vídeo + amplificação multicanal</div>
-        </div>
-
-        <div class="plan-section-title" data-en="Everything in Starter, plus">Tudo do Starter, mais</div>
-        <ul class="plan-features">
-          <li data-en="Repost on TikTok, Threads, Facebook, Kwai, and YouTube Shorts">Repost em TikTok, Threads, Facebook, Kwai e YouTube Shorts</li>
-          <li data-en="Direct DM automation with trackable link">Automação no Direct com link rastreável</li>
-          <li data-en="Comment trigger (e.g., &quot;Comment ME IN&quot;)">Gatilho de comentário (ex: "Comente EU QUERO")</li>
-          <li data-en="Click and traffic measurement">Mensuração de cliques e tráfego</li>
-          <li data-en="Caption and CTA optimization">Otimização de legenda e CTA</li>
-        </ul>
-
-        <div class="plan-best">
-          <strong data-en="Best for">Melhor para</strong>
-          <span data-en="Brands that want multichannel distribution and lead capture via DM.">Marcas que querem distribuição multicanal e captação de leads via Direct.</span>
-        </div>
-
-        <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" data-en="Get the Pro plan">Quero o plano Pro</a>
-      </div>
-
-      <!-- ULTRA -->
-      <div class="plan plan-ultra" id="ultra">
-        <div class="plan-badge-ultra" data-en="★ Recommended · Performance">★ Recomendado · Performance</div>
+      <!-- PACOTE DE PARCERIA -->
+      <div class="plan plan-ultra" id="parceria">
         <span class="plan-ultra-halo" aria-hidden="true"></span>
         <span class="plan-ultra-spotlight-trail" aria-hidden="true"></span>
         <span class="plan-ultra-spotlight-warm" aria-hidden="true"></span>
         <span class="plan-ultra-spotlight" aria-hidden="true"></span>
 
-        <div class="plan-name"><span class="plan-name-icon">🔥</span> Ultra</div>
-        <div class="plan-tagline" data-en="Full campaign with everything + premium bonuses and paid media">Campanha completa com tudo + bônus premium e mídia paga</div>
+        <div class="plan-name"><span class="plan-name-icon">🔥</span> Pacote de Parceria</div>
+        <div class="plan-tagline" data-en="Full campaign with everything: distribution, paid media, and performance guarantee">Campanha completa com tudo: distribuição, mídia paga e garantia de performance</div>
 
         <div class="plan-price-block">
-          <span class="discount-tag" data-en="⚡ Offer · 25% OFF">⚡ Oferta · 25% OFF</span>
-          <div class="plan-price-strike" data-en="Was US$ 2,500">De US$ 2.500</div>
-          <div class="plan-price"><span class="plan-price-sup">US$</span>1.880</div>
+          <div class="plan-price-strike" data-en="Was US$ 1,880">De US$ 1.880</div>
+          <div class="plan-price"><span class="plan-price-sup">US$</span>880</div>
           <div class="plan-price-suffix" data-en="full campaign · performance asset, not a standalone branded post">campanha completa · ativo de performance, não publi isolada</div>
         </div>
 
-        <div class="plan-section-title" data-en="Everything in Pro, plus">Tudo do Pro, mais</div>
+        <div class="plan-section-title" data-en="Content + distribution">Conteúdo + distribuição</div>
         <ul class="plan-features">
+          <li data-en="1 Reel on Lucas Flame's Instagram in collab format">1 Reel no Instagram do Lucas Flame em formato collab</li>
+          <li data-en="Repost on TikTok, Threads, Facebook, Kwai, and YouTube Shorts">Repost em TikTok, Threads, Facebook, Kwai e YouTube Shorts</li>
+          <li data-en="Direct DM automation with trackable link">Automação no Direct com link rastreável</li>
           <li data-en="30 days of link in Lucas Flame's bio">30 dias de link na bio do Lucas Flame</li>
           <li data-en="1 Story of up to 60s about the brand">1 Story de até 60s falando da marca</li>
-          <li data-en="Story CTA pointing to a link or DM">CTA no Story direcionando para link ou Direct</li>
           <li data-en="Boost in internal channels (when it makes sense)">Reforço nos canais internos (quando fizer sentido)</li>
-          <li data-en="Alternative CTA for paid traffic campaigns">CTA alternativo para campanhas de tráfego pago</li>
         </ul>
 
         <div class="plan-section-title" data-en="Performance & Paid media">Performance & Mídia paga</div>
         <ul class="plan-features">
           <li data-en-html="&lt;strong style=&quot;color: var(--text);&quot;&gt;50,000 minimum guaranteed views on Instagram&lt;/strong&gt;"><strong style="color: var(--text);">50.000 views mínimas garantidas no Instagram</strong></li>
-          <li data-en="Delivery via Meta Ads boosting">Entrega via impulsionamento Meta Ads</li>
+          <li data-en="Delivery via Meta Ads boosting (media budget included)">Entrega via impulsionamento Meta Ads (budget incluso)</li>
           <li data-en="90 days of Ad Code / whitelisting">90 dias de Ad Code / whitelisting</li>
           <li data-en="Option to scale winning creative in paid media">Possibilidade de escalar criativo vencedor em mídia paga</li>
         </ul>
@@ -3865,150 +3850,77 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           <span data-en="Brands that want to turn the partnership into a scalable performance asset.">Marcas que querem transformar a parceria em ativo de performance escalável.</span>
         </div>
 
-        <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" data-en="Get the Ultra · lock in the offer">Quero o Ultra · garantir oferta</a>
+        <a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" data-en="I want to close the partnership">Quero fechar parceria</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ============ COMPARISON TABLE ============ -->
+<!-- ============ TUDO INCLUSO ============ -->
 <section class="compare">
   <div class="container">
     <div class="reveal">
-      <div class="section-label" data-en="Direct comparison">Comparativo direto</div>
-      <h2 class="section-title" data-en-html="What&#x27;s &lt;em&gt;in and what&#x27;s out&lt;/em&gt; of each plan.">O que <em>tem e o que não tem</em> em cada plano.</h2>
-      <p class="section-sub" data-en="Honest table so you can decide in 30 seconds.">Tabela honesta para você decidir em 30 segundos.</p>
+      <div class="section-label" data-en="Everything included">Tudo incluso</div>
+      <h2 class="section-title" data-en-html="Everything that comes with the &lt;em&gt;Pacote de Parceria&lt;/em&gt;.">Tudo que está incluso no <em>Pacote de Parceria</em>.</h2>
+      <p class="section-sub" data-en="Each deliverable that's part of the package — no extra fees.">Cada entrega que faz parte do pacote — sem cobranças extras.</p>
     </div>
 
     <div class="compare-wrap reveal">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th data-en="Item">Item</th>
-            <th>Starter<span class="compare-th-price">US$ 880</span></th>
-            <th>Pro<span class="compare-th-price">US$ 1.480</span></th>
-            <th class="is-ultra">Ultra<span class="compare-th-price">US$ 1.880</span></th>
-          </tr>
-        </thead>
-        <tbody>
+      <div class="checklist-wrap">
 
-          <tr class="is-group"><td colspan="4" data-en="Core content">Conteúdo principal</td></tr>
-          <tr>
-            <td data-en="1 Reel on Lucas Flame's Instagram">1 Reel no Instagram do Lucas Flame</td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td data-en="Posted in collab format">Publicação em formato collab</td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td data-en="Preliminary script for approval">Roteiro preliminar para aprovação</td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td data-en="CTA optimized for conversion">CTA otimizado para conversão</td>
-            <td><span class="cmp-text" data-en="Basic">Básico</span></td>
-            <td><span class="cmp-text" data-en="Optimized">Otimizado</span></td>
-            <td class="is-ultra"><span class="cmp-text cmp-text-ultra" data-en="Strategic">Estratégico</span></td>
-          </tr>
+        <div class="checklist-group">
+          <h4 class="checklist-group-title" data-en="Core content">Conteúdo principal</h4>
+          <ul class="checklist">
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="1 Reel on Lucas Flame's Instagram, in collab format with the brand">1 Reel no Instagram do Lucas Flame, em formato collab com a marca</span></li>
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="Preliminary script approved by the brand before production">Roteiro preliminar com aprovação da marca antes da produção</span></li>
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="Strategic CTA optimized for conversion">CTA estratégico otimizado para conversão</span></li>
+          </ul>
+        </div>
 
-          <tr class="is-group"><td colspan="4" data-en="Multichannel distribution">Distribuição multicanal</td></tr>
-          <tr>
-            <td data-en="Repost on TikTok, Threads, Facebook, Kwai, and YT Shorts">Repost no TikTok, Threads, Facebook, Kwai e YT Shorts</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
+        <div class="checklist-group">
+          <h4 class="checklist-group-title" data-en="Multichannel distribution">Distribuição multicanal</h4>
+          <ul class="checklist">
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="Repost on TikTok, Threads, Facebook, Kwai, and YouTube Shorts">Repost no TikTok, Threads, Facebook, Kwai e YouTube Shorts</span></li>
+          </ul>
+        </div>
 
-          <tr class="is-group"><td colspan="4" data-en="Conversion and tracking">Conversão e rastreio</td></tr>
-          <tr>
-            <td data-en="Direct DM automation with trackable link">Automação no Direct com link rastreável</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td data-en="Click and traffic measurement">Mensuração de cliques e tráfego</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td data-en="Alternative CTA for paid traffic">CTA alternativo para tráfego pago</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
+        <div class="checklist-group">
+          <h4 class="checklist-group-title" data-en="Conversion and tracking">Conversão e rastreio</h4>
+          <ul class="checklist">
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="Direct DM automation with trackable link">Automação no Direct com link rastreável</span></li>
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="Click and traffic measurement">Mensuração de cliques e tráfego</span></li>
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="Alternative CTA for paid traffic campaigns">CTA alternativo para campanhas de tráfego pago</span></li>
+          </ul>
+        </div>
 
-          <tr class="is-group"><td colspan="4" data-en="Extra exposure">Exposição extra</td></tr>
-          <tr>
-            <td data-en="30 days of bio link">30 dias de link na bio</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td data-en="1 Story of up to 60s about the brand">1 Story de até 60s sobre a marca</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td data-en="Boost in internal channels">Reforço nos canais internos</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
+        <div class="checklist-group">
+          <h4 class="checklist-group-title" data-en="Extra exposure">Exposição extra</h4>
+          <ul class="checklist">
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="30 days of link in Lucas Flame's bio">30 dias de link na bio do Lucas Flame</span></li>
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="1 Story of up to 60s about the brand">1 Story de até 60s sobre a marca</span></li>
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="Boost in internal channels (when it makes sense)">Reforço nos canais internos (quando fizer sentido)</span></li>
+          </ul>
+        </div>
 
-          <tr class="is-group"><td colspan="4" data-en="Performance and paid media">Performance e mídia paga</td></tr>
-          <tr>
-            <td data-en="50,000 minimum guaranteed views on Instagram">50.000 views mínimas garantidas no Instagram</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td data-en="Delivery via Meta Ads (boosting)">Entrega via Meta Ads (impulsionamento)</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td data-en="90 days of Ad Code (whitelisting)">90 dias de Ad Code (whitelisting)</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
-          <tr>
-            <td data-en="Scale in paid media (winning creative)">Escala em mídia paga (criativo vencedor)</td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td><span class="cmp-no"><svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></td>
-            <td class="is-ultra"><span class="cmp-yes"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
-          </tr>
+        <div class="checklist-group">
+          <h4 class="checklist-group-title" data-en="Performance and paid media">Performance e mídia paga</h4>
+          <ul class="checklist">
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en-html="&lt;strong&gt;50,000 minimum guaranteed views on Instagram&lt;/strong&gt;"><strong>50.000 views mínimas garantidas no Instagram</strong></span></li>
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="Delivery via Meta Ads boosting (media budget included)">Entrega via impulsionamento Meta Ads (budget de mídia incluso)</span></li>
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="90 days of Ad Code (whitelisting)">90 dias de Ad Code (whitelisting)</span></li>
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="Option to scale the winning creative in paid media">Possibilidade de escalar criativo vencedor em mídia paga</span></li>
+          </ul>
+        </div>
 
-          <tr class="is-group"><td colspan="4" data-en="Delivery timeline">Prazo de entrega</td></tr>
-          <tr>
-            <td data-en="Total delivery">Entrega total</td>
-            <td><span class="cmp-text" data-en="10 days">10 dias</span></td>
-            <td><span class="cmp-text" data-en="10 days">10 dias</span></td>
-            <td class="is-ultra"><span class="cmp-text cmp-text-ultra" data-en="10 days">10 dias</span></td>
-          </tr>
+        <div class="checklist-group">
+          <h4 class="checklist-group-title" data-en="Delivery timeline">Prazo de entrega</h4>
+          <ul class="checklist">
+            <li><span class="checklist-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M4 8.5L7 11L12 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-en="Total delivery in 10 days (5 days script + 5 days production)">Entrega total em 10 dias (5 dias roteiro + 5 dias produção)</span></li>
+          </ul>
+        </div>
 
-          <tr>
-            <td></td>
-            <td><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" style="padding: 10px 16px; font-size: 13px;" data-en="Apply">Aplicar</a></td>
-            <td><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" style="padding: 10px 16px; font-size: 13px; background: linear-gradient(135deg, var(--purple-400), var(--purple-600)); border: none; color: white;" data-en="Apply">Aplicar</a></td>
-            <td class="is-ultra"><a href="https://w.app/lucasflame" target="_blank" rel="noopener noreferrer" class="plan-cta" style="padding: 10px 16px; font-size: 13px; background: linear-gradient(135deg, var(--flame), var(--purple-500)); border: none; color: white; font-weight: 700;" data-en="★ Apply">★ Aplicar</a></td>
-          </tr>
-        </tbody>
-      </table>
+      </div>
     </div>
   </div>
 </section>
@@ -4032,7 +3944,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <div class="faq-item">
         <button class="faq-q">
-          <span data-en="What's included in the US$ 1,880 Ultra package?">O que está incluído no pacote Ultra de US$ 1.880?</span>
+          <span data-en="What's included in the US$ 880 Pacote de Parceria?">O que está incluído no Pacote de Parceria de US$ 880?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </button>
         <div class="faq-a"><div class="faq-a-inner" data-en="1 Instagram video (Reel), repost across every network (TikTok, Threads, Facebook, Kwai, YouTube Shorts), DM automation with trackable link, 30 days of bio link, 1 Story of up to 60s about the brand, 90 days of Ad Code so you can run it as an ad from your account, and the 50,000-view guarantee. Strategic script is included — you're not paying for exposure alone, you're paying for a piece engineered to convert.">1 vídeo no Instagram (Reels), repost em todas as redes (TikTok, Threads, Facebook, Kwai, YouTube Shorts), automação no Direct com link rastreável, 30 dias de link na bio, 1 Story de até 60s sobre a marca, 90 dias de Ad Code para você rodar como anúncio na sua conta, e a garantia de 50.000 views. Roteiro estratégico está incluso — você não está pagando só por exposição, está pagando por uma peça pensada para converter.</div></div>
@@ -4051,7 +3963,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           <span data-en="How does payment work?">Como é feito o pagamento?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner" data-en="PayPal or bank transfer only. No credit card, no installments. 100% upfront to start the script, with invoice issued by Studio Flame. For Pro and Ultra packages, 50/50 can be arranged (deposit + delivery).">Apenas PayPal ou transferência bancária. Sem cartão, sem parcelamento. 100% antecipado para iniciar o roteiro, com nota fiscal emitida pela Studio Flame. Para pacotes PRO e ULTRA, é possível combinar 50/50 (sinal + entrega).</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="PayPal or bank transfer only. No credit card, no installments. 100% upfront to start the script, with invoice issued by Studio Flame. 50/50 (deposit + delivery) can be arranged on request.">Apenas PayPal ou transferência bancária. Sem cartão, sem parcelamento. 100% antecipado para iniciar o roteiro, com nota fiscal emitida pela Studio Flame. 50/50 (sinal + entrega) é possível sob solicitação.</div></div>
       </div>
 
       <div class="faq-item">
@@ -4988,17 +4900,17 @@ document.getElementById('applyForm').addEventListener('submit', async (e) => {
   const META_I18N = {
     pt: {
       title: 'Lucas Flame — Parcerias com Marcas | 50.000 views garantidas no Instagram',
-      description: 'Parceria de creator com previsibilidade real: 50.000 visualizações mínimas garantidas no Instagram, repost em todas as redes, 30 dias de link na bio e 90 dias de Ad Code. A partir de US$ 880 por vídeo.',
+      description: 'Parceria de creator com previsibilidade real: 50.000 visualizações mínimas garantidas no Instagram, repost em todas as redes, 30 dias de link na bio e 90 dias de Ad Code. US$ 880 por parceria.',
       ogTitle: 'Lucas Flame — Parcerias com Marcas com garantia de performance',
-      ogDescription: 'Mais de 813 mil seguidores. +5,2 milhões de contas alcançadas em 90 dias. Garantia de 50.000 views por vídeo no Instagram. A partir de US$ 880.',
+      ogDescription: 'Mais de 813 mil seguidores. +5,2 milhões de contas alcançadas em 90 dias. Garantia de 50.000 views por vídeo no Instagram. US$ 880 por parceria.',
       ogImageAlt: 'Lucas Flame — Creator com 813k+ seguidores, parcerias com marcas premium',
       ogLocale: 'pt_BR'
     },
     en: {
       title: 'Lucas Flame — Brand Partnerships | 50,000 Guaranteed Instagram Views',
-      description: 'Creator partnership with real predictability: 50,000 minimum guaranteed views on Instagram, repost across every network, 30 days of bio link, and 90 days of Ad Code. Starting at US$ 880 per video.',
+      description: 'Creator partnership with real predictability: 50,000 minimum guaranteed views on Instagram, repost across every network, 30 days of bio link, and 90 days of Ad Code. US$ 880 per partnership.',
       ogTitle: 'Lucas Flame — Brand partnerships with a performance guarantee',
-      ogDescription: '813k+ followers. 5.2M+ accounts reached in 90 days. 50,000-view guarantee per Instagram video. Starting at US$ 880.',
+      ogDescription: '813k+ followers. 5.2M+ accounts reached in 90 days. 50,000-view guarantee per Instagram video. US$ 880 per partnership.',
       ogImageAlt: 'Lucas Flame — Creator with 813k+ followers, partnerships with premium brands',
       ogLocale: 'en_US'
     }
