@@ -27,6 +27,10 @@ marcas interessadas em parcerias com o creator Lucas Flame.
 ├── og-cover.jpg            # Imagem 1200×630 para preview social
 ├── robots.txt              # Diretrizes para crawlers
 ├── sitemap.xml             # Sitemap para Google
+├── flamelinks/             # Link na bio (estilo Linktree) → /flamelinks
+│   ├── index.html          # Página (CSS e JS inline)
+│   ├── capa.jpg / .webp    # Capa (recorte do hero.jpg)
+│   └── avatar.jpg          # Avatar redondo (barra fixa e compartilhar)
 └── videos/                 # Showreel
     ├── video1–6.mp4        # 6 vídeos comprimidos
     └── poster1–6.jpg       # Posters dos vídeos
@@ -73,6 +77,17 @@ git push
 | Preço Ultra | `1.880` |
 | Garantia de views | `50.000` |
 | Email/WhatsApp | (rodapé) |
+
+---
+
+## Link na bio — /flamelinks
+
+`studioflame.com.br/flamelinks` é o link tree próprio (substitui o entr.ai).
+Cada botão em `flamelinks/index.html` é um bloco `<div class="link"> … </div>`:
+copie um bloco, troque o `href`, as cores `--c1`/`--c2`, as letras da miniatura,
+o título (`.title`) e a descrição (`.sub`). Selo opcional:
+`<span class="tag">Cupom no link</span>`. A busca e o menu "⋮" (copiar,
+WhatsApp, compartilhar) funcionam sozinhos para qualquer botão novo.
 
 ---
 
